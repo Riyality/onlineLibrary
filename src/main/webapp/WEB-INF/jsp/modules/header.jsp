@@ -205,7 +205,7 @@
 							</div class="dropdown-menu">
 							<a class="dropdown-item" href="profile.jsp">My Profile</a>
 							<a class="dropdown-item" href="inbox.jsp">Inbox</a>
-							<a class="dropdown-item" href="login.jsp">Logout</a>
+							<a class="dropdown-item" href="/">Logout</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -225,7 +225,7 @@
 								<span>Main Menu</span>
 							</li>
 							<li class="submenu active">
-								<a href="index.jsp" ><i class="feather-grid"></i> <span> Dashboard</span> </span></a>
+								<a href="login" ><i class="feather-grid"></i> <span> Dashboard</span> </span></a>
 								
 							</li>
 								<li class="submenu dropdown">
@@ -233,10 +233,16 @@
 								        <i class="fas fa-graduation-cap"></i> <span> Students</span> <span class="menu-arrow"></span>
 								    </a>
 								    <ul class="dropdown-menu">
+
 								        <li><a href="students.jsp">Student List</a></li>
 								        <li><a href="student-details.jsp">Student View</a></li>
 								        <li><a href="addTeacher">Student Add</a></li>
 								        <li><a href="edit-student.jsp">Student Edit</a></li>
+
+								        <li><a href="studentList">Student List</a></li>
+								        <li><a href="addStudent">Student Add</a></li>
+								        <li><a href="editStudent">Student Edit</a></li>
+
 								    </ul>
 								</li>
 
@@ -270,7 +276,7 @@
 						        <i class="fas fa-shield-alt"></i> <span> Authentication </span> <span class="menu-arrow"></span>
 						    </a>
 						    <ul class="dropdown-menu">
-						        <li><a href="login.jsp">Login</a></li>
+						        <li><a href="/">Login</a></li>
 						        <li><a href="register.jsp">Register</a></li>
 						        <li><a href="forgot-password.jsp">Forgot Password</a></li>
 						        <li><a href="error-404.jsp">Error Page</a></li>
