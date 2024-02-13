@@ -1,30 +1,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../jsp/modules/header.jsp" />
-
-<!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
-	
-			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-                <div class="content container-fluid">
-				
-					<!-- Page Header -->
-					<div class="page-header">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="page-sub-header">
-									<h3 class="page-title">Students</h3>
-									<ul class="breadcrumb">
-										<li class="breadcrumb-item"><a href="students.jsp">Student</a></li>
-										<li class="breadcrumb-item active">All Students</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Page Header -->
-					
-					<div class="student-group-form">
+
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-sub-header">
+                        <h3 class="page-title">Students</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="students">Student</a></li>
+                            <li class="breadcrumb-item active">All Students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        			<div class="student-group-form">
 						<div class="row">
 							<div class="col-lg-3 col-md-6">  
 								<div class="form-group">
@@ -49,381 +45,224 @@
 						</div>
 					</div>
 				
-					<div class="row">
-						<div class="col-sm-12">
-						
-							<div class="card card-table comman-shadow">
-								<div class="card-body">
-								
-									<!-- Page Header -->
-									<div class="page-header">
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table comman-shadow">
+                    <div class="card-body">
+                        	<div class="page-header">
 										<div class="row align-items-center">
 											<div class="col">
-												<h3 class="page-title">Students</h3>
+												<h3 class="page-title">Teachers</h3>
 											</div>
 											<div class="col-auto text-end float-end ms-auto download-grp">
-												<a href="students.jsp" class="btn btn-outline-gray me-2 active"><i class="feather-list"></i></a>
-												<a href="students-grid.jsp" class="btn btn-outline-gray me-2"><i class="feather-grid"></i></a>
+
 												<a href="#" class="btn btn-outline-primary me-2"><i class="fas fa-download"></i> Download</a>
-												<a href="add-student.jsp" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+												<a href="addStudent" class="btn btn-primary"><i class="fas fa-plus"></i></a>
 											</div>
 										</div>
 									</div>
-									<!-- /Page Header -->
-									
-									<div class="table-responsive">
-										<table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
-											<thead class="student-thread">
-												<tr>
-													<th>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</th>
-													<th>ID</th>
-													<th>Name</th>
-													<th>Class</th>
-													<th>DOB</th>
-													<th>Parent Name</th>
-													<th>Mobile Number</th>
-													<th>Address</th>
-													<th class="text-end">Action</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2209</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-01.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Aaliyah</a>
-														</h2>
-													</td>
-													<td>10 A</td>
-													<td>2 Feb 2002</td>
-													<td>Jeffrey Wong</td>
-													<td>097 3584 5870</td>
-													<td>911 Deer Ridge Drive,USA</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2213</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-03.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Malynne</a>
-														</h2>
-													</td>
-													<td>8 A</td>
-													<td>3 June 2010</td>
-													<td>Fields Malynne</td>
-													<td>242 362 3100</td>
-													<td>Bacardi Rd P.O. Box N-4880, New Providence</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2143</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-02.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Levell Scott</a>
-														</h2>
-													</td>
-													<td>10 A</td>
-													<td>12 Apr 2002</td>
-													<td>Jeffrey Scott</td>
-													<td>026 7318 4366</td>
-													<td>P.O. Box: 41, Gaborone</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2431</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-03.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Minnie</a>
-														</h2>
-													</td>
-													<td>11 C</td>
-													<td>24 Feb 2000</td>
-													<td>J Shaffer</td>
-													<td>952 512 4909</td>
-													<td>4771  Oral Lake Road, Golden Valley</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE1534</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-04.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Lois A</a>
-														</h2>
-													</td>
-													<td>10 A</td>
-													<td>22 Jul 2006</td>
-													<td>Cleary Wong</td>
-													<td>413 289 1314</td>
-													<td>2844 Leverton Cove Road, Palmer</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2153</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-05.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Calvin</a>
-														</h2>
-													</td>
-													<td>9 B</td>
-													<td>8 Dec 2003</td>
-													<td>Minnie J Shaffer</td>
-													<td>701 753 3810</td>
-													<td>1900  Hidden Meadow Drive, Crete</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE1252</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-06.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Joe Kelley</a>
-														</h2>
-													</td>
-													<td>11 C</td>
-													<td>7 Oct 2000</td>
-													<td>Vincent Howard</td>
-													<td>402 221 7523</td>
-													<td>3979  Ashwood Drive, Omaha</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE1434</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-07.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Vincent</a>
-														</h2>
-													</td>
-													<td>10 A</td>
-													<td>4 Jan 2002</td>
-													<td>Kelley Joe</td>
-													<td>402 221 7523</td>
-													<td>3979  Ashwood Drive, Omaha</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2345</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-08.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Kozma  Tatari</a>
-														</h2>
-													</td>
-													<td>9 A</td>
-													<td>1 Feb 2006</td>
-													<td>Lombardi</td>
-													<td>04 2239 968</td>
-													<td>Rruga E Kavajes, Condor Center, Tirana</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE2365</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-09.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">John Chambers</a>
-														</h2>
-													</td>
-													<td>11 B</td>
-													<td>13 Sept 2003</td>
-													<td>Wong Jeffrey</td>
-													<td>870 663 2334</td>
-													<td>4667 Sunset Drive, Pine Bluff</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check check-tables">
-															<input class="form-check-input" type="checkbox"  value="something">
-														</div>
-													</td>
-													<td>PRE1234</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="student-details.jsp" class="avatar avatar-sm me-2"><img class="avatar-img rounded-circle" src="resources/assets/img/profiles/avatar-10.jpg" alt="User Image"></a>
-															<a href="student-details.jsp">Nathan Humphries</a>
-														</h2>
-													</td>
-													<td>10 B</td>
-													<td>26 Apr 1994</td>
-													<td>Stephen Marley</td>
-													<td>077 3499 9959</td>
-													<td>86 Lamphey Road, Thelnetham</td>
-													<td class="text-end">
-														<div class="actions ">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-student.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>							
-						</div>					
-					</div>					
-				</div>
+                        
+                      <!-- Table Structure -->
+<div class="table-responsive">
+    <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+        <thead class="student-thread">
+            <tr>
+                <th>
+                    <div class="form-check check-tables">
+                        <input class="form-check-input" type="checkbox"  value="something">
+                    </div>
+                </th>
+                <th>StudentId</th>
+                <th>StudentName</th>
+                <th>Email</th>
+                 <th>ClassName</th>
+                <th>Department</th>
+                <th>ContactNumber</th>
+                <th class="text-end">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student data populated dynamically -->
+            <c:forEach var="student" items="${studentList}">
+                <tr>
+                    <td>
+                        <div class="form-check check-tables">
+                            <input class="form-check-input" type="checkbox" value="something">
+                        </div>
+                    </td>
+                    <td>${student.studentId}</td>
+                    <td>${student.firstName} ${student.lastName}</td> 
+                    <td>${student.email}</td>
+                    <td>${student.className}</td>
+                    <td>${student.department}</td>
+                    <td>${student.contactNumber}</td>
+                    <td class="text-end">
+                        <div class="actions">
+                            <button type="button" class="btn btn-sm bg-success-light me-2 view-student" data-student-id="${student.studentId}">
+                                <i class="feather-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm bg-danger-light edit-student"  data-toggle="modal"
+										        data-target="#editStudentModal" data-student-id="${student.studentId}">
+                                <i class="feather-edit"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</div>
 
-			
-		
-		<!-- Datatables JS -->
-		<script src="assets/plugins/datatables/datatables.min.js"></script>
-		
-		
-<include page="../jsp/modules/footer.jsp"></include>
+<!-- Edit Student Modal -->
+<div class="modal fade" id="editStudentModal" tabindex="-1" role="dialog" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editStudentModalLabel">Edit Student</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for editing student details -->
+                <form id="editStudentForm">
+                    <!-- Input fields for editing student details -->
+                    <input type="hidden" id="editStudentId" name="StudentId">
+                    <div class="form-group">
+                        <label for="editFirstName">First Name</label>
+                        <input type="text" class="form-control" id="editFirstName" name="FirstName" ${student.firstName}>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLastName">Last Name</label>
+                        <input type="text" class="form-control" id="editLastName" name="LastName" ${student.lastName}>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email</label>
+                        <input type="email" class="form-control" id="editEmail" name="Email" ${student.email}>
+                    </div>
+                    <div class="form-group">
+                        <label for="editContactNumber">Contact Number</label>
+                        <input type="text" class="form-control" id="editContactNumber" name="ContactNumber" ${student.contactNumber}>
+                    </div>
+                    <!-- Button to submit form -->
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+//Handler for clicking on edit button
+$('.edit-student').click(function() {
+    var studentId = $(this).data('studentId');
+    
+    // Use AJAX to fetch student details based on ID
+    $.ajax({
+        type: 'GET',
+        url: '/edit_student/' + studentId,
+        success: function(response) {
+            // Populate the modal form fields with fetched data
+            $('#editStudentId').val(response.studentId);
+            $('#editFirstName').val(response.firstName);
+            $('#editLastName').val(response.lastName);
+            $('#editEmail').val(response.email);
+            $('#editContactNumber').val(response.contactNumber);
+            
+            // Show the edit student modal
+            $('#editStudentModal').modal('show');
+        },
+        error: function(xhr, status, error) {
+            if (xhr.status == 404) {
+                alert('Student not found.');
+            } else {
+                alert('Error fetching student details.');
+            }
+        }
+    });
+});
+
+</script>
+ <!-- JavaScript code for handling edit student modal -->
+ <!--
+<script>
+$(document).ready(function() {
+    // Handler for clicking on edit button
+    $('.edit-student').click(function() {
+        // Fetch the student ID from the button data attribute
+        var studentId = $(this).data('student-id');
+        
+        // Use AJAX to fetch student details based on ID
+        $.ajax({
+            type: 'GET',
+            url: '/edit_student/' + studentId, // Complete URL to fetch student details
+            success: function(response) {
+                // Populate the modal form fields with fetched data
+                $('#editStudentId').val(response.studentId);
+                $('#editFirstName').val(response.firstName);
+                $('#editLastName').val(response.lastName);
+                $('#editEmail').val(response.email);
+                $('#editContactNumber').val(response.contactNumber);
+                
+                // Show the edit student modal
+                $('#editStudentModal').modal('show');
+            },
+            error: function() {
+                // Handle error if fetching fails
+                alert('Error fetching student details.');
+            }
+        });
+    });
+    
+    // Handler for submitting edit student form
+    $('#editStudentForm').submit(function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+        
+        // Use AJAX to submit the form data
+        $.ajax({
+            type: 'POST',
+            url: '/editStudent', // Complete URL to submit edited student details
+            data: $(this).serialize(), // Serialize form data
+            success: function(response) {
+                // Close the modal after successful submission
+                $('#editStudentModal').modal('hide');
+                // Optionally, you can update the student details in the table without refreshing the page
+                // Update table code goes here...
+                // For demonstration purposes, let's assume response contains updated student details
+                updateTable(response);
+            },
+            error: function() {
+                // Handle error if submission fails
+                alert('Error editing student details.');
+            }
+        });
+    });
+});
+
+// Function to update table with updated student details
+function updateTable(response) {
+    var $tableRow = $('tr[data-student-id="' + response.studentId + '"]');
+    $tableRow.find('td:eq(1)').text(response.firstName);
+    $tableRow.find('td:eq(2)').text(response.lastName);
+    $tableRow.find('td:eq(3)').text(response.email);
+    $tableRow.find('td:eq(4)').text(response.contactNumber);
+    // Update other fields similarly...
+}
+
+</script> -->
+
+                    </div>
+                </div>							
+            </div>					
+        </div>					
+    </div>
    
+
+
+
+<include page="../jsp/modules/footer.jsp"></include>

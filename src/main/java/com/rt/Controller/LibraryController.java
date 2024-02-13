@@ -1,4 +1,4 @@
-package com.rt.LibraryController;
+package com.rt.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +12,9 @@ public class LibraryController {
 		
 		return "new_login";
 	}
-@RequestMapping("/login")
+    @RequestMapping("/login")
 	public String IndexPage() {
 		return "index";
 	}
+
 }
