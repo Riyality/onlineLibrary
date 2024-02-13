@@ -233,9 +233,16 @@
 								        <i class="fas fa-graduation-cap"></i> <span> Students</span> <span class="menu-arrow"></span>
 								    </a>
 								    <ul class="dropdown-menu">
+
+								        <li><a href="students.jsp">Student List</a></li>
+								        <li><a href="student-details.jsp">Student View</a></li>
+								        <li><a href="addTeacher">Student Add</a></li>
+								        <li><a href="edit-student.jsp">Student Edit</a></li>
+
 								        <li><a href="studentList">Student List</a></li>
 								        <li><a href="addStudent">Student Add</a></li>
 								        <li><a href="editStudent">Student Edit</a></li>
+
 								    </ul>
 								</li>
 
@@ -244,7 +251,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="teacherList">Teacher List</a></li>
 									<li><a href="teacher-details.jsp">Teacher View</a></li>
-									<li><a href="add-teacher.jsp">Teacher Add</a></li>
+									<li><a href="addTeacher">Teacher Add</a></li>
 									<li><a href="edit-teacher.jsp">Teacher Edit</a></li>
 								</ul>
 							</li>
