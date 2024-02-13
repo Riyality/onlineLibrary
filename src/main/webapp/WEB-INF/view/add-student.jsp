@@ -29,109 +29,74 @@
 						
 							<div class="card comman-shadow">
 								<div class="card-body">
-									<form>
+									<form action="add_student">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title student-info">Student Information <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
 											</div>
 											<div class="col-12 col-sm-4">  
 												<div class="form-group local-forms">
+													<label >Student Id <span class="login-danger">*</span></label>
+													<input class="form-control" name="StudentId" type="text" placeholder="Enter Student Id" >
+												</div>
+											</div>
+											
+											<div class="col-12 col-sm-4">  
+												<div class="form-group local-forms">
 													<label >First Name <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" placeholder="Enter First Name" >
+													<input class="form-control" name="FirstName" type="text" placeholder="Enter First Name" >
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Last Name <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" placeholder="Enter First Name" >
+													<input class="form-control" name="LastName" type="text" placeholder="Enter last Name" >
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Gender <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Select Gender</option>
-														<option>Female</option>
-														<option>Male</option>
-														<option>Others</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms calendar-icon">
-													<label >Date Of Birth  <span class="login-danger">*</span></label>
-													<input class="form-control datetimepicker" type="text"  placeholder="DD-MM-YYYY" >
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Roll </label>
-													<input class="form-control" type="text" placeholder="Enter Roll Number" >
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Blood Group <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Group </option>
-														<option>B+</option>
-														<option>A+</option>
-														<option>O+</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Religion <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Religion  </option>
-														<option>Hindu</option>
-														<option>Christian</option>
-														<option>Others</option>
-													  </select>
-												</div>
-											</div>
+											
+								
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >E-Mail <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" placeholder="Enter Email Address" >
+													<input class="form-control" name="Email" type="text" placeholder="Enter Email Address" >
 												</div>
 											</div>
+													
 											<div class="col-12 col-sm-4">
+														<div class="form-group local-forms">
+															<label >Class <span class="login-danger">*</span></label>
+															<select class="form-control select" name="className">
+																<option>Please Select Class  </option>
+																<option>BA-I</option>
+																<option>BA-II</option>
+																<option>BA-III</option>
+																<option>BCA-I</option>
+																<option>BCA-II</option>
+																<option>BCA-III</option>
+															  </select>
+														</div>
+													</div>
+									         	<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label >Class <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Class  </option>
-														<option>12</option>
-														<option>11</option>
-														<option>10</option>
+													<label >Department <span class="login-danger">*</span></label>
+													<select class="form-control select" name="Department">
+														<option>Please Select Department  </option>
+														<option>B.A</option>
+														<option>B.com</option>
+														<option>B.C.A</option>
+														<option>B.C.S</option>
+														
 													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Section <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Section   </option>
-														<option>B</option>
-														<option>A</option>
-														<option>C</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Admission ID </label>
-													<input class="form-control" type="text" placeholder="Enter Admission ID" >
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Phone </label>
-													<input class="form-control" type="text" placeholder="Enter Phone Number" >
+													<input class="form-control" name="ContactNumber" type="text" placeholder="Enter Phone Number" >
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
+											<!-- <div class="col-12 col-sm-4">
 												<div class="form-group students-up-files">
 													<label>Upload Student Photo (150px X 150px)</label>
 													<div class="uplod">
@@ -140,7 +105,7 @@
 														</label>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<div class="col-12">
 												<div class="student-submit">
 													<button type="submit" class="btn btn-primary">Submit</button>
@@ -159,6 +124,8 @@
         </div>
 		<!-- /Main Wrapper -->
 
+<h1>${successMsg}</h1>
+<h1>${errMsg}</h1>
 		<!-- Datepicker Core JS -->
 		<script src="assets/plugins/moment/moment.min.js"></script>
 		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
