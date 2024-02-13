@@ -235,7 +235,7 @@
 								    <ul class="dropdown-menu">
 								        <li><a href="students.jsp">Student List</a></li>
 								        <li><a href="student-details.jsp">Student View</a></li>
-								        <li><a href="add-student.jsp">Student Add</a></li>
+								        <li><a href="addTeacher">Student Add</a></li>
 								        <li><a href="edit-student.jsp">Student Edit</a></li>
 								    </ul>
 								</li>
@@ -243,9 +243,9 @@
 							<li class="submenu dropdown">
 								<a data-bs-toggle="dropdown" href="#"><i class="fas fa-graduation-cap"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="teachers.jsp">Teacher List</a></li>
+									<li><a href="teacherList">Teacher List</a></li>
 									<li><a href="teacher-details.jsp">Teacher View</a></li>
-									<li><a href="add-teacher.jsp">Teacher Add</a></li>
+									<li><a href="addTeacher">Teacher Add</a></li>
 									<li><a href="edit-teacher.jsp">Teacher Edit</a></li>
 								</ul>
 							</li>
