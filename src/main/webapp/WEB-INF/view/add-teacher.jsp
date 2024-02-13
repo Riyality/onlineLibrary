@@ -3,7 +3,8 @@
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
-
+<h1>${successMsg }</h1>
+<h1>${errorMsg}</h1>
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
@@ -22,135 +23,80 @@
 					</div>
 					<!-- /Page Header -->
 				
-					<div class="row">
+					<div class="row">					
 						<div class="col-sm-12">
 						
-							<div class="card">
+							<div class="card common-shadow">
 								<div class="card-body">
-									<form>
-										<div class="row">
+									 <form action="add_teacher" method="POST">
+												<div class="row">
 											<div class="col-12">
-												<h5 class="form-title"><span>Basic Details</span></h5>
-											</div>
-											<div class="col-12 col-sm-4">  
-												<div class="form-group local-forms">
-													<label>Teacher ID <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Teacher ID">
+												<h5 class="form-title"><span>Teacher Registration Form</span></h5>
+													 
 												</div>
-											</div>
-											<div class="col-12 col-sm-4">
+											 <div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Name <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Name">
+													<label>Teacher Id <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" placeholder="Enter Teacher Id" name="TeacherId">
 												</div>
-											</div>
+											</div>    								
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Gender <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Male</option>
-														<option>Female</option>
-														<option>Others</option>
-													</select>
+													<label >Firste Name <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" placeholder="Enter Firste Name" name="FirstName">
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms calendar-icon">
-													<label >Date Of Birth  <span class="login-danger">*</span></label>
-													<input class="form-control datetimepicker" type="text"  placeholder="DD-MM-YYYY" >
-												</div>
-											</div>
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Mobile <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Phone">
+													<label>Last Name <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" placeholder="Enter Last Name" name="LastName">
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms calendar-icon">
-													<label>Joining Date <span class="login-danger">*</span></label>
-													<input class="form-control datetimepicker" type="text"  placeholder="DD-MM-YYYY" >
-												</div>
-											</div>
-											<div class="col-12 col-sm-4 local-forms">
-												<div class="form-group">
-													<label>Qualification <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" placeholder="Enter Joining Date">
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Experience <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" placeholder="Enter Experience">
-												</div>
-											</div>
-											<div class="col-12">
-												<h5 class="form-title"><span>Login Details</span></h5>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Username <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Username">
-												</div>
-											</div>
+											
+											
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Email ID <span class="login-danger">*</span></label>
-													<input type="email" class="form-control" placeholder="Enter Mail Id">
+													<input type="email" class="form-control" placeholder="Enter Mail Id" name="Email">
 												</div>
 											</div>
+											
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Password <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Password">
+													<label>Contact Number <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" placeholder="Enter Contact Number" name="ContactNumber">
 												</div>
 											</div>
+											
+											
 											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Repeat Password <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Repeat Password">
+																							
+													<div class="form-group local-forms">
+													<label >Faculty<span class="login-danger">*</span></label>
+													<select class="form-control select"   name="faculty">
+														<option>Please Select Faculty  </option>
+														<option>B.A</option>
+														<option>B.com</option>
+														<option>B.C.A</option>
+														<option>B.C.S</option>
+														
+													  </select>
 												</div>
 											</div>
-											<div class="col-12">
-												<h5 class="form-title"><span>Address</span></h5>
-											</div>
-											<div class="col-12">
-												<div class="form-group local-forms">
-												<label>Address <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter address">
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>City <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter City">
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>State <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter State">
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Zip Code <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Zip">
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Country <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Country">
-												</div>
-											</div>
+											
+
+											
 											<div class="col-12">
 												<div class="student-submit">
 													<button type="submit" class="btn btn-primary">Submit</button>
 												</div>
 											</div>
-										</div>
-									</form>
+								</div>
+							</form>
 								</div>
 							</div>
 							
@@ -158,14 +104,20 @@
 					</div>					
 				</div>
 				
+				
 			</div>
-			<!-- /Page Wrapper -->
+			/Page Wrapper
 			
-        </div>
+			 <!DOCTYPE html>
+
+			 
+        
 		<!-- /Main Wrapper -->
 	
 		<!-- Datepicker Core JS -->
-		<script src="assets/plugins/moment/moment.min.js"></script>
+		<script src="assets/plugins/moment/moment.
+		3.min.js"></script>
 		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 	<include page="../jsp/modules/footer.jsp"></include>
   
+   
