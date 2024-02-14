@@ -1,4 +1,4 @@
-package com.rt.StudentController;
+package com.rt.controller;
 
 import java.util.List;
 
@@ -11,38 +11,40 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.rt.LibraryService.LibraryService;
 import com.rt.StudentEntity.StudentEntity;
+import com.rt.service.LibraryService;
 
 @Controller
+@RequestMapping("/students")
 public class StudentController {
 	@Autowired
 	LibraryService libraryService;
 
-	@RequestMapping("/addStudent")
+	@RequestMapping("/add-form")
 	public String studentAdd() {
 
-		return "add-student";
+		return "students/add";
 	}
 
-	@RequestMapping("/add_student")
-	public String Student_Add(@ModelAttribute StudentEntity student, Model m) {
+	@RequestMapping(method=RequestMethod.POST)
+	public String add(@ModelAttribute StudentEntity student, Model m) {
 
-		boolean isAdded = libraryService.AddStudent(student);
+		boolean isAdded = libraryService.addStudent(student);
 		if (isAdded) {
 			m.addAttribute("successMsg", "student Added Successfully...");
 		} else {
 			m.addAttribute("errMsg", "Unable to Add...");
 		}
 
-		return "add-student";
+		return "students/list";
 	}
 
-	@RequestMapping("/editStudent")
+	@RequestMapping("/edit-form")
 	public String editStudent() {
-		return "edit-student";
+		return "students/update";
 	}
 
 	/*@RequestMapping("/edit_student")
@@ -75,7 +77,7 @@ public class StudentController {
 */
 	
 		
-		@GetMapping("/edit_student/{studentId}")
+		@GetMapping("/id/{studentId}")
 		@ResponseBody
 		public ResponseEntity<StudentEntity> getStudentById(@PathVariable int studentId) {
 		    StudentEntity student = libraryService.getStudentById(studentId);
@@ -86,11 +88,11 @@ public class StudentController {
 		    }
 		}
 	
-	    @GetMapping("/studentList")
+	    @GetMapping
 	    public String studentList(Model model) {
-	        List<StudentEntity> studentList = libraryService.AllStudents();
+	        List<StudentEntity> studentList = libraryService.all();
 	        model.addAttribute("studentList", studentList);
-	        return "students"; // Assuming "students" is the view name
+	        return "students/list"; // Assuming "students" is the view name
 	    }
 
 	  

@@ -1,4 +1,4 @@
-package com.rt.LibraryDao;
+package com.rt.dao;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.rt.RowMapper.StudentRowMapper;
 import com.rt.StudentEntity.StudentEntity;
+import com.rt.mapper.StudentRowMapper;
 
 @Repository
 

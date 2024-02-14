@@ -1,4 +1,4 @@
-package com.rt.Dao;
+package com.rt.dao;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.rt.RowMapper.BookRowMapper;
 import com.rt.entity.BookEntity;
+import com.rt.mapper.BookRowMapper;
 
 @Repository
 public class BookDao {
