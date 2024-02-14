@@ -255,7 +255,14 @@
 									<li><a href="edit-teacher.jsp">Teacher Edit</a></li>
 								</ul>
 							</li>
-					
+					        <li class="submenu dropdown">
+								<a data-bs-toggle="dropdown" href="#"><i class="fas fa-graduation-cap"></i> <span>Books</span> <span class="menu-arrow"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="add">Add Book</a></li>
+									<li><a href="bookList"> View Books</a></li>
+
+								</ul>
+							</li>
 							<li class="menu-title"> 
 								<span>Management</span>
 							</li>

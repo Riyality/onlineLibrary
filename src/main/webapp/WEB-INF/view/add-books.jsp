@@ -27,7 +27,7 @@
 						
 							<div class="card">
 								<div class="card-body">
-									<form>
+									<form action="addBook" method="post">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title"><span>Book Information</span></h5>
@@ -35,76 +35,55 @@
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Book ID <span class="login-danger">*</span></label>
-													<input type="text" class="form-control">
+													<input type="text" class="form-control" name="BookId">
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Book Name <span class="login-danger">*</span></label>
-													<input type="text" class="form-control">
+													<label>Title <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" name="Title">
+												</div>
+											</div>
+											<div class="col-12 col-sm-4">
+												<div class="form-group local-forms">
+													<label>Author <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" name="Author">
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Language <span class="login-danger">*</span></label>
-													<select class="form-control select">
+													<select class="form-control select" name="Language">
 														<option>Select Language</option>
 														<option>English</option>
-														<option>Turkish</option>
-														<option>Chinese</option>
-														<option>Spanish</option>
-														<option>Arabic</option>
+														<option>Hindi</option>
+														<option>Marathi</option>
+														
 													</select>
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Department <span class="login-danger">*</span></label>
-													<input type="text" class="form-control">
+													<label>ISBN <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" name="ISBN">
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Class</label>
-													<select class="form-control select">
-														<option>Select Class <span class="login-danger">*</span></option>
-														<option>LKG</option>
-														<option>UKG</option>
-														<option>1</option>
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-														<option>5</option>
-														<option>6</option>
-														<option>7</option>
-														<option>8</option>
-														<option>9</option>
-														<option>10</option>
-														<option>11</option>
-														<option>12</option>
-													</select>
+													<label>Publisher</label>
+													<input type="text" class="form-control" name="Publisher">
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Type <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Select Type</option>
-														<option>Book</option>
-														<option>DVD</option>
-														<option>CD</option>
-														<option>Newspaper</option>
-													</select>
+													<label>Publisher City <span class="login-danger">*</span></label>
+													<input type="text" class="form-control" name="PublisherCity">
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label>Status <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Select Status</option>
-														<option>In Stock</option>
-														<option>Out of Stock</option>
-													</select>
+													<label>Publication Date  <span class="login-danger">*</span></label>
+													<input type="Date" class="form-control" name="PublicationDate">
 												</div>
 											</div>
 											<div class="col-12">
