@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../jsp/modules/header.jsp" />
+<jsp:include page="../../jsp/modules/header.jsp" />
 <%@ page isELIgnored="false" %>
 
 
@@ -164,7 +164,7 @@ $('.edit-student').click(function() {
     // Use AJAX to fetch student details based on ID
     $.ajax({
         type: 'GET',
-        url: '/edit_student/' + studentId,
+        url: '/id/' + studentId,
         success: function(response) {
             // Populate the modal form fields with fetched data
             $('#editStudentId').val(response.studentId);
@@ -199,7 +199,7 @@ $(document).ready(function() {
         // Use AJAX to fetch student details based on ID
         $.ajax({
             type: 'GET',
-            url: '/edit_student/' + studentId, // Complete URL to fetch student details
+            url: '/id/' + studentId, // Complete URL to fetch student details
             success: function(response) {
                 // Populate the modal form fields with fetched data
                 $('#editStudentId').val(response.studentId);
@@ -265,4 +265,4 @@ function updateTable(response) {
 
 
 
-<include page="../jsp/modules/footer.jsp"></include>
+<include page="../../jsp/modules/footer.jsp"></include>

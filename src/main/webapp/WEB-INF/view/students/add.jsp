@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../jsp/modules/header.jsp" />
+<jsp:include page="../../jsp/modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -29,7 +29,7 @@
 						
 							<div class="card comman-shadow">
 								<div class="card-body">
-									<form action="add_student">
+									<form action="students" method="post">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title student-info">Student Information <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
@@ -129,5 +129,5 @@
 		<!-- Datepicker Core JS -->
 		<script src="assets/plugins/moment/moment.min.js"></script>
 		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<include page="../jsp/modules/footer.jsp"></include>
+<include page="../../jsp/modules/footer.jsp"></include>
    
