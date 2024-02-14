@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../jsp/modules/header.jsp" />
 
@@ -44,32 +45,39 @@
 										<table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
 											<thead class="student-thread">
 												<tr>
-													<th>ID</th>
-													<th>Name</th>
-													<th>Language</th>
-													<th>Department</th>
-													<th>Class</th>
-													<th>Type</th>
-													<th>Status</th>
+													<th>BookId</th>
+													<th>Title</th>
+													<th>Author</th>
+													 <th>Language </th>
+													<th>ISBN</th>
+													<th>Publisher</th>
+													<th>Publisher City</th>
+													<th>Publication Date</th>
 													<th class="text-end">Action</th>
 												</tr>
 											</thead>
 											<tbody>
+											<c:forEach var="bk" items="${allBook }">>
 												<tr>
-													<td>PRE2309</td>
-													<td>
-														<h2>
-															<a>Acoustics</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>Science</td>
-													<td>10</td>
-													<td>Book</td>
-													<td>
+												 <td>${bk.bookId}</td>
+											        <td>${bk.title}</td>
+											        <td>${bk.author}</td>
+											        <td>${bk.language}</td>
+											        <td>${bk.ISBN}</td>
+											        <td>${bk.publisher}</td>
+											        <td>${bk.publisherCity}</td>
+											        <td>${bk.publicationDate}</td>
+																								<!-- <td>
 														<span class="badge badge-success">In Stock</span>
-													</td>
-													<td class="text-end">
+													</td> -->
+													<!-- <td class="text-end">
+													<div class="actions"> -->
+ <%--  <a href="deleteBook?id=${bk.bookId}"><i class="material-icons" style="color:blue">delete</i></a>
+  <a href="updateForm?BookId=${bk.bookId}&Title=${bk.title}&Author=${bk.author}&Language=${bk.language}&ISBN=${bk.ISBN}&publisher=${bk.publisher}&publisherCity=${bk.publisherCity}&publicationDate=${bk.publicationDate}"class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a> --%>
+</div>
+</td>
+
+													 <td class="text-end">
 														<div class="actions">
 															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
 																<i class="feather-eye"></i>
@@ -78,183 +86,10 @@
 																<i class="feather-edit"></i>
 															</a>
 														</div>
-													</td>
+													</td> 
+													
 												</tr>
-												<tr>
-													<td>PRE2209</td>
-													<td>
-														<h2>
-															<a>Acoustics</a>
-														</h2>
-													</td>
-													<td>Geometry</td>
-													<td>Science</td>
-													<td>8</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-success">In Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE2213</td>
-													<td>
-														<h2>
-															<a>Games</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>General</td>
-													<td>9</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-success">In Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE2143</td>
-													<td>
-														<h2>
-															<a>Chess</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>General</td>
-													<td>7</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-danger">Out of Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE2009</td>
-													<td>
-														<h2>
-															<a>Calculus</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>Mathematics</td>
-													<td>9</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-success">In Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE2431</td>
-													<td>
-														<h2>
-															<a>Visual Basic</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>Computer Science</td>
-													<td>11</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-danger">Out of Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE1534</td>
-													<td>
-														<h2>
-															<a>Acoustics</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>Science</td>
-													<td>10</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-success">In Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>PRE2153</td>
-													<td>
-														<h2>
-															<a>Robotics</a>
-														</h2>
-													</td>
-													<td>English</td>
-													<td>Science</td>
-													<td>10</td>
-													<td>Book</td>
-													<td>
-														<span class="badge badge-danger">Out of Stock</span>
-													</td>
-													<td class="text-end">
-														<div class="actions">
-															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-																<i class="feather-eye"></i>
-															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
-														</div>
-													</td>
-												</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 									</div>
