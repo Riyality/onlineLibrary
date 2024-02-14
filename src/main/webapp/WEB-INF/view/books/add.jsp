@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../jsp/modules/header.jsp" />
+<jsp:include page="../../jsp/modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -27,7 +27,7 @@
 						
 							<div class="card">
 								<div class="card-body">
-									<form action="addBook" method="post">
+									<form action="books" method="post">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title"><span>Book Information</span></h5>
@@ -104,7 +104,7 @@
         </div>
 		
 <script src="assets/plugins/select2/js/select2.min.js"></script>		
-<include page="../jsp/modules/footer.jsp"></include>
+<include page="../../jsp/modules/footer.jsp"></include>
 
 
     

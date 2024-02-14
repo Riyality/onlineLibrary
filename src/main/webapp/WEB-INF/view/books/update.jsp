@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../jsp/modules/header.jsp" />
+<jsp:include page="../../jsp/modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -128,5 +128,5 @@
 		<!-- /Main Wrapper -->
 		
 	
-<include page="../jsp/modules/footer.jsp"></include>
+<include page="../../jsp/modules/footer.jsp"></include>
  

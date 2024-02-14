@@ -28,7 +28,7 @@
 						
 							<div class="card common-shadow">
 								<div class="card-body">
-									 <form action="add_teacher" method="POST">
+									 <form action="teachers" method="POST">
 												<div class="row">
 											<div class="col-12">
 												<h5 class="form-title"><span>Teacher Registration Form</span></h5>

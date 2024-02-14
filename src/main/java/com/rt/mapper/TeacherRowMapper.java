@@ -1,4 +1,4 @@
-package com.rt.RowMapper;
+package com.rt.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

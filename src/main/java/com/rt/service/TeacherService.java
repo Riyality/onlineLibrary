@@ -1,22 +1,23 @@
-package com.rt.Service;
+package com.rt.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.rt.dao.TeacherDao;
 import com.rt.entity.Teacher;
-import com.rt.Dao.TeacherDao;
 
 @Service
 public class TeacherService {
 @Autowired
 	TeacherDao	teacherDao;
-	public boolean saveTeacher(Teacher teacher) {
+	public boolean add(Teacher teacher) {
 		
 		return teacherDao.saveTeacher(teacher);
 	}
 	
-	public List<Teacher> AllTeachers() {
+	public List<Teacher> all() {
 		return teacherDao.AllTeachers();
 	}
 
