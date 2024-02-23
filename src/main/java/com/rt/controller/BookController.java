@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rt.entity.BookEntity;
 import com.rt.service.BookService;
@@ -24,7 +26,7 @@ public class BookController {
 		return "books/add";
 	}
 
-	@RequestMapping(method=RequestMethod.POST)
+	@PostMapping("/add")
 	public String add(@ModelAttribute BookEntity bookEntity, Model model) {
 		boolean isAdded = bookService.addBook(bookEntity);
 
@@ -35,16 +37,46 @@ public class BookController {
 			model.addAttribute("errMsg", "book is not added ");
 
 		}
-		return "books/list";
+		return "redirect:/books/list";
 
 	}
 
-	// ----------------------------View All-------------------------------
-	@RequestMapping
+	@RequestMapping("/update")
+	public String BookUpdate() {
+		return "books/update";
+
+	}
+
+	@PostMapping("/updateBook")
+	public String updateBook(@ModelAttribute BookEntity entity, Model model) {
+	    boolean isUpdated = bookService.update(entity);
+	    if (isUpdated) {
+	        model.addAttribute("msgsucc", "Successfully updated.");
+	    } else {
+	        model.addAttribute("err", "Not updated.");
+	    }
+	    return "redirect:/books/list";
+	}
+	@RequestMapping("/delete")
+	public String deletedata(@RequestParam int bookId, Model model) {
+
+		boolean empdelete = bookService.deletedata(bookId);
+
+		if (empdelete) {
+			model.addAttribute("successMsg", "Book deleted successfully...");
+		} else {
+			model.addAttribute("errMsg", "Unable to delete the book...");
+		}
+
+		return "redirect:/books/list";
+	}
+
+	@RequestMapping("/list")
 	public String list(Model model) {
 		List<BookEntity> list = bookService.all();
 		model.addAttribute("allBook", list);
 		return "books/list";
 
 	}
+
 }

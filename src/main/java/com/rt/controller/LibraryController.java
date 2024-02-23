@@ -14,7 +14,7 @@ public class LibraryController {
 	}
     @RequestMapping("/login")
 	public String IndexPage() {
-		return "index";
+		return "Authontication/index";
 	}
 
 }

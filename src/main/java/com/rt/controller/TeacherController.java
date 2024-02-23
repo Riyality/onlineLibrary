@@ -7,8 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rt.entity.Teacher;
 import com.rt.service.TeacherService;
@@ -19,11 +20,11 @@ public class TeacherController {
 	@Autowired
 	TeacherService teacherService;
 	
-	@RequestMapping(value = "/add-form")
+	@RequestMapping("/add-form")
 	public String addForm(){
-		return "add-teacher";
+		return "teachers/add";
 	}
-	@RequestMapping(method = RequestMethod.POST) 
+	@PostMapping("/add")
 		public String Teacher(@ModelAttribute Teacher teacher, Model model ){
 			boolean  isAdded =teacherService.add(teacher);
 			
@@ -34,15 +35,53 @@ public class TeacherController {
 			{
 				model.addAttribute("errorMsg","Teacher is failed to add ");
 			}
-			return "add-teacher";
+			return "redirect:/teachers/list";
 
 		}
-	
-	@GetMapping
+	@RequestMapping("/update")
+  	public String TeacherUpdate(){
+  		return "teachers/update";
+	}
+  		
+  		 @PostMapping("/updateTeacher")
+ 	  	public String update(@ModelAttribute  Teacher teacher, Model model){
+ 	  		
+ 	  		boolean isAdded = teacherService.update(teacher);
+ 	  		
+ 	  		model.addAttribute("teacherList", teacher);
+ 	  		
+ 	  		if (isAdded) {
+ 	  					
+ 	  			model.addAttribute("msgsucc","SuccessFully updated....");
+ 	  		} else {
+ 	  			model.addAttribute("err","Not updated....");
+ 	  		}
+ 	  		
+ 	  		return "redirect:/teachers/list";
+			
+ 	}	
+  	
+  		@RequestMapping("/delete")
+		public String deletedata(@RequestParam int teacherId, Model model) {
+		    
+		    boolean empdelete = teacherService.delete(teacherId);
+
+		    if (empdelete) {
+		        model.addAttribute("successMsg", "	Teacher deleted successfully...");
+		    } else {
+		        model.addAttribute("errMsg", "Unable to delete the Teacher...");
+		    }
+
+			return "redirect:/teachers/list";
+
+		}
+
+  		 
+	@GetMapping("/list")
     public String teacherList(Model model) {
         List<Teacher> teacherList = teacherService.all();
         model.addAttribute("teacherList", teacherList);
-        return "teachers"; // Assuming "students" is the view name
+        return "teachers/list"; // Assuming "students" is the view name
     }
 
 

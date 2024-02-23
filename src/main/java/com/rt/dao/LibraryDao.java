@@ -35,6 +35,7 @@ public class LibraryDao {
 		return false;
 	}
 
+	
 	public List<StudentEntity> AllStudents() {
 		List<StudentEntity> list = null;
 		try {
@@ -51,6 +52,7 @@ public class LibraryDao {
 
 		return false;
 	}
+	
 
 	public StudentEntity getStudentById(int StudentId) {
 		StudentEntity studentdata = null;
@@ -67,8 +69,45 @@ public class LibraryDao {
 		System.out.println(studentdata);
 		return studentdata;
 	}
+	
+	
+
+	public boolean update(StudentEntity student) {
+		try {
+			Object args[] = {student.getFirstName(), student.getLastName(), student.getEmail(),student.getClassName(),student.getDepartment(),
+					student.getContactNumber(),student.getStudentId()};
+			 int studentList = template.update( "update student SET `FirstName` = ?, `LastName` = ?, `Email` = ?, `ClassName` = ?, `Department` = ?, "
+		        		+ "`ContactNumber` = ? WHERE studentId = ?", args);
+			 
+			 if (studentList == 1) {
+		            return true;
+		        } else {
+		            return false;
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        return false;
+		    }	
+          }
+
+
+	public boolean delete(int studentId) {
+		try {
+
+			Object[] args = {studentId};
+			int data = template.update("delete from student where studentId=?", args);
+			 
+			 if(data==1){
+				 return true;
+			 }	
+
+		} catch (Exception e) {
+         System.out.println(e);
+		}
+		return false;
+	}
 
 	
-	}
+}
 
 

@@ -1,6 +1,5 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../../jsp/modules/header.jsp" />
+<jsp:include page="../modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -40,6 +39,10 @@
 											</div>
 										</div>
 									</div>
+									
+									
+									
+									
 									<!-- /Page Header -->
 									<div class="table-responsive">
 										<table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
@@ -57,9 +60,9 @@
 												</tr>
 											</thead>
 											<tbody>
-											<c:forEach var="bk" items="${allBook }">>
+											<c:forEach var="bk" items="${allBook }">
 												<tr>
-												 <td>${bk.bookId}</td>
+												    <td>${bk.bookId}</td>
 											        <td>${bk.title}</td>
 											        <td>${bk.author}</td>
 											        <td>${bk.language}</td>
@@ -67,13 +70,6 @@
 											        <td>${bk.publisher}</td>
 											        <td>${bk.publisherCity}</td>
 											        <td>${bk.publicationDate}</td>
-																								<!-- <td>
-														<span class="badge badge-success">In Stock</span>
-													</td> -->
-													<!-- <td class="text-end">
-													<div class="actions"> -->
- <%--  <a href="deleteBook?id=${bk.bookId}"><i class="material-icons" style="color:blue">delete</i></a>
-  <a href="updateForm?BookId=${bk.bookId}&Title=${bk.title}&Author=${bk.author}&Language=${bk.language}&ISBN=${bk.ISBN}&publisher=${bk.publisher}&publisherCity=${bk.publisherCity}&publicationDate=${bk.publicationDate}"class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a> --%>
 </div>
 </td>
 
@@ -82,9 +78,14 @@
 															<a href="javascript:;" class="btn btn-sm bg-success-light me-2">
 																<i class="feather-eye"></i>
 															</a>
-															<a href="edit-books.jsp" class="btn btn-sm bg-danger-light">
-																<i class="feather-edit"></i>
-															</a>
+															<a href="update?BookId=${bk.bookId}&Title=${bk.title}&Author=${bk.author}&Language=${bk.language}&ISBN=${bk.ISBN}&Publisher=${bk.publisher}&PublisherCity=${bk.publisherCity}
+															&PublicationDate=${bk.publicationDate}"class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a> 
+															
+															<a  class="btn btn-sm bg-danger-light" href="#" onclick="confirmDelete(${bk.bookId});">
+                                                        <i class="feather-trash-2"></i>
+                                                    </a>
+
+															
 														</div>
 													</td> 
 													
@@ -99,12 +100,19 @@
 					</div>					
 				</div>
 
+<script>
+    function confirmDelete(bookId) {
+        if (confirm('Are you sure you want to delete this record?')) {
+            window.location.href = 'delete?bookId=' + bookId;
+        }
+    }
+</script>
 		
 	
 		<!-- Datatables JS -->
-		<script src="assets/plugins/datatables/datatables.min.js"></script>
+		<script src="<c:url value="resources/assets/plugins/datatables/datatables.min.js"/>"></script>
 		
 	
 	
-<include page="../../jsp/modules/footer.jsp"></include>
+<include page="../modules/footer.jsp"></include>
    

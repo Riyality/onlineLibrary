@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../../jsp/modules/header.jsp" />
+
+<jsp:include page="../modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -29,7 +29,7 @@
 						
 							<div class="card comman-shadow">
 								<div class="card-body">
-									<form action="students" method="post">
+									<form action="add" method="post">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title student-info">Student Information <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
@@ -108,7 +108,7 @@
 											</div> -->
 											<div class="col-12">
 												<div class="student-submit">
-													<button type="submit" class="btn btn-primary">Submit</button>
+													<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 												</div>
 											</div>
 										</div>
@@ -124,10 +124,7 @@
         </div>
 		<!-- /Main Wrapper -->
 
-<h1>${successMsg}</h1>
-<h1>${errMsg}</h1>
-		<!-- Datepicker Core JS -->
-		<script src="assets/plugins/moment/moment.min.js"></script>
-		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<include page="../../jsp/modules/footer.jsp"></include>
+		<script  src="<c:url value="resources/assets/plugins/moment/moment.min.js"/>"></script>
+		<script src="<c:url value="resources/assets/js/bootstrap-datetimepicker.min.js"/>"></script>
+<include page="../modules/footer.jsp"></include>
    

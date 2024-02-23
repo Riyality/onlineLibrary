@@ -8,7 +8,8 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<mvc:annotation-driven />
-   <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
+	
+   <mvc:resources location="/resources/" mapping="/resources/**"/>
 	<context:component-scan base-package="com.rt" />
 	
 	<!-- <context:property-placeholder location="classpath:application.properties"/> -->

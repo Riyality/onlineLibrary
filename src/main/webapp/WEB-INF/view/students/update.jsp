@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../../jsp/modules/header.jsp" />
+<jsp:include page="../modules/header.jsp" />
 
 <!-- Rest of your JSP page content goes here -->
 <%@ page isELIgnored="false" %>
@@ -15,7 +15,7 @@
 								<div class="page-sub-header">
 									<h3 class="page-title">Edit Students</h3>
 									<ul class="breadcrumb">
-										<li class="breadcrumb-item"><a href="students.html">Student</a></li>
+										<li class="breadcrumb-item"><a href="list.jsp">Student</a></li>
 										<li class="breadcrumb-item active">Edit Students</li>
 									</ul>
 								</div>
@@ -24,114 +24,80 @@
 					</div>
 					<!-- /Page Header -->
 				
+		
 					<div class="row">
 						<div class="col-sm-12">
 						
 							<div class="card comman-shadow">
 								<div class="card-body">
-									<form>
+									<form action="updateStudent" method="post">
 										<div class="row">
 											<div class="col-12">
 												<h5 class="form-title student-info">Student Information <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
 											</div>
 											<div class="col-12 col-sm-4">  
 												<div class="form-group local-forms">
+													<label >Student Id <span class="login-danger">*</span></label>
+													<input class="form-control" name="StudentId" type="text"  value="${param.studentId}"   >
+												</div>
+											</div>
+											
+											<div class="col-12 col-sm-4">  
+												<div class="form-group local-forms">
 													<label >First Name <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" value="John Doe" >
+													<input class="form-control" name="FirstName" type="text"  value="${param.firstName}"  >
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Last Name <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" value="Stephen" >
+													<input class="form-control" name="LastName" type="text"  value="${param.lastName}" >
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Gender <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Select Gender</option>
-														<option>Female</option>
-														<option>Male</option>
-														<option>Others</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms calendar-icon">
-													<label >Date Of Birth  <span class="login-danger">*</span></label>
-													<input class="form-control datetimepicker" type="text"  placeholder="DD-MM-YYYY" >
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Roll </label>
-													<input class="form-control" type="text" value="12450687" >
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Blood Group <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Group </option>
-														<option>B+</option>
-														<option>A+</option>
-														<option>O+</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Religion <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Religion  </option>
-														<option>Hindu</option>
-														<option>Christian</option>
-														<option>Others</option>
-													  </select>
-												</div>
-											</div>
+											
+								
+											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >E-Mail <span class="login-danger">*</span></label>
-													<input class="form-control" type="text" value="example@gmail.com" >
+													<input class="form-control" name="Email" type="text"  value="${param.email}" >
 												</div>
 											</div>
+													
 											<div class="col-12 col-sm-4">
+														<div class="form-group local-forms">
+															<label >Class <span class="login-danger">*</span></label>
+															<select class="form-control select" name="className" value="${param.className}">
+																<option>Please Select Class  </option>
+																<option>BA-I</option>
+																<option>BA-II</option>
+																<option>BA-III</option>
+																<option>BCA-I</option>
+																<option>BCA-II</option>
+																<option>BCA-III</option>
+															  </select>
+														</div>
+													</div>
+									         	<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label >Class <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Class  </option>
-														<option>12</option>
-														<option>11</option>
-														<option>10</option>
+													<label >Department <span class="login-danger">*</span></label>
+													<select class="form-control select" name="Department" value="${param.department}">
+														<option>Please Select Department  </option>
+														<option>B.A</option>
+														<option>B.com</option>
+														<option>B.C.A</option>
+														<option>B.C.S</option>
+														
 													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Section <span class="login-danger">*</span></label>
-													<select class="form-control select">
-														<option>Please Select Section   </option>
-														<option>B</option>
-														<option>A</option>
-														<option>C</option>
-													  </select>
-												</div>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label >Admission ID </label>
-													<input class="form-control" type="text" value="1426539" >
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Phone </label>
-													<input class="form-control" type="text" value="+1 888 888 8888" >
+													<input class="form-control" name="ContactNumber" type="text" value="${param.contactNumber}" >
 												</div>
 											</div>
-											<div class="col-12 col-sm-4">
+											<!-- <div class="col-12 col-sm-4">
 												<div class="form-group students-up-files">
 													<label>Upload Student Photo (150px X 150px)</label>
 													<div class="uplod">
@@ -140,10 +106,10 @@
 														</label>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<div class="col-12">
 												<div class="student-submit">
-													<button type="submit" class="btn btn-primary">Submit</button>
+													<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 												</div>
 											</div>
 										</div>
@@ -151,7 +117,7 @@
 								</div>
 							</div>							
 						</div>					
-					</div>					
+					</div>						
 				</div>				
 			</div>
 			<!-- /Page Wrapper -->
@@ -160,9 +126,9 @@
 		<!-- /Main Wrapper -->
 
 		<!-- Datepicker Core JS -->
-		<script src="assets/plugins/moment/moment.min.js"></script>
-		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="<c:url value="resources/assets/plugins/moment/moment.min.js"/>"></script>
+		<script src="<c:url value="resources/assets/js/bootstrap-datetimepicker.min.js"/>"></script>
 		
 
-<include page="../../jsp/modules/footer.jsp"></include>
+<include page="../modules/footer.jsp"></include>
   

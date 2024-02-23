@@ -26,4 +26,15 @@ public class BookService {
 			return bookDao.AllBook();
 		}
 
+
+		public boolean update(BookEntity entity) {
+			return bookDao.update(entity);
+		}
+
+
+		public boolean deletedata(int bookId) {
+
+			return bookDao.deletedata(bookId);
+		}
+
 }

@@ -9,7 +9,7 @@ public class Teacher {
 	private String LastName;
 	private String Email;
 	private String ContactNumber;
-	private String faculty;
+	private String Faculty;
 	
 	
 	public Teacher(){}
@@ -23,7 +23,7 @@ public Teacher(int teacherId, String firstName, String lastName, String email, S
 	this.LastName = lastName;
 	this.Email = email;
 	this.ContactNumber = contactNumber;
-	this.faculty = faculty;
+	this.Faculty = faculty;
 	
 
 		
@@ -80,16 +80,14 @@ public void setContactNumber(String contactNumber) {
 
 
 public String getFaculty() {
-	return faculty;
+	return Faculty;
 }
 
 
 
 public void setFaculty(String faculty) {
-	this.faculty = faculty;
+	Faculty = faculty;
 }
-
-
 
 
 

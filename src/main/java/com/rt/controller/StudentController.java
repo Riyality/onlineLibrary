@@ -10,11 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rt.StudentEntity.StudentEntity;
+import com.rt.entity.BookEntity;
 import com.rt.service.LibraryService;
 
 @Controller
@@ -28,8 +31,8 @@ public class StudentController {
 
 		return "students/add";
 	}
-
-	@RequestMapping(method=RequestMethod.POST)
+	
+	@PostMapping("/add")
 	public String add(@ModelAttribute StudentEntity student, Model m) {
 
 		boolean isAdded = libraryService.addStudent(student);
@@ -39,45 +42,39 @@ public class StudentController {
 			m.addAttribute("errMsg", "Unable to Add...");
 		}
 
-		return "students/list";
+		return "redirect:/students/list";
 	}
 
-	@RequestMapping("/edit-form")
+	@RequestMapping("/update")
 	public String editStudent() {
 		return "students/update";
 	}
-
-	/*@RequestMapping("/edit_student")
-	public String Student_edit(@ModelAttribute StudentEntity student, Model m) {
-		boolean isUpdated = libraryService.UpdateStudent(student);
-		if (isUpdated) {
-			m.addAttribute("successMsg", "User updated Successfully...");
-		} else {
-			m.addAttribute("errMsg", "Unable to Update...");
-		}
-		return "students";
-	}*/
-
-/*
-	@RequestMapping("/edit_student/{StudentId}")
-	public String getStudentById(@PathVariable int StudentId, Model m){
-		StudentEntity StudentList=libraryService.getStudentById(StudentId);
-		m.addAttribute("StudentData",StudentList);
-		return "edit-student";
-	}
-	
-*/	
-	/*  @GetMapping("/edit_student/{studentId}")
-	    @ResponseBody
-	    public StudentEntity getStudentById(@PathVariable int studentId) {
-	        StudentEntity student = libraryService.getStudentById(studentId);
-	        return student;
+	@PostMapping("/updateStudent")
+	public String updateBook(@ModelAttribute StudentEntity student, Model model) {
+	    boolean isUpdated = libraryService.update(student);
+	    if (isUpdated) {
+	        model.addAttribute("successMsg", "Successfully updated.");
+	    } else {
+	        model.addAttribute("errMsg", "Not updated.");
 	    }
-	    
-*/
-	
+	    return "redirect:/students/list";
+	}
+       
+	@RequestMapping("/delete")
+	public String deleteStudent(@RequestParam int studentId, Model model) {
+
+		boolean empdelete = libraryService.delete(studentId);
+
+		if (empdelete) {
+			model.addAttribute("successMsg", "student deleted successfully...");
+		} else {
+			model.addAttribute("errMsg", "Unable to delete student...");
+		}
+
+		return "redirect:/students/list";
+	}
 		
-		@GetMapping("/id/{studentId}")
+		/*@GetMapping("/id/{studentId}")
 		@ResponseBody
 		public ResponseEntity<StudentEntity> getStudentById(@PathVariable int studentId) {
 		    StudentEntity student = libraryService.getStudentById(studentId);
@@ -86,9 +83,9 @@ public class StudentController {
 		    } else {
 		        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		    }
-		}
+		}*/
 	
-	    @GetMapping
+	    @GetMapping("/list")
 	    public String studentList(Model model) {
 	        List<StudentEntity> studentList = libraryService.all();
 	        model.addAttribute("studentList", studentList);

@@ -30,6 +30,14 @@ public class LibraryService {
 		return librarydao.getStudentById(StudentId);
 	}
 
+	public boolean update(StudentEntity student) {
+		return librarydao.update(student);	}
+
+	public boolean delete(int studentId) {
+		return librarydao.delete(studentId);
+
+	}
+
 	
 
 

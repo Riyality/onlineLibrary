@@ -45,6 +45,66 @@ public class TeacherDao {
 		return list;
 	}
 
+/*
+
+public boolean update(Teacher teacher) {
+		 try {
+		        Object[] args = {teacher.getFirstName(), teacher.getLastName(),
+		        		teacher.getEmail(), teacher.getContactNumber(), teacher.getFaculty(),teacher.getTeacherId()};
+		        
+		        String sql = "update teacher SET `FirstName` = ?, `LastName` = ?, `Email` = ?, `ContactNumber` = ?, `faculty` = ?,  WHERE TeacherId = ?";
+		        System.out.println("SQL statement: " + sql);
+		        
+		        int a = Template.update(sql, args);
+
+		        if (a == 1) {
+		            return true;
+		        } else {
+		            return false;
+		        }
+		    } catch (Exception e2) {
+		        e2.printStackTrace();
+		        return false;
+		    }
+		}
+
+*/
+
+	public boolean update(Teacher teacher) {
+	    try {
+	        Object[] args = {teacher.getFirstName(), teacher.getLastName(),
+	                teacher.getEmail(), teacher.getContactNumber(), teacher.getFaculty(), teacher.getTeacherId()};
+	       
+	        String sql = "UPDATE teacher SET FirstName = ?, LastName = ?, Email = ?, ContactNumber = ?, faculty = ? WHERE TeacherId = ?";
+	        System.out.println("SQL statement: " + sql);
+	        
+	        int rowsAffected = Template.update(sql, args);
+	        
+	        return rowsAffected == 1;
+	    } catch (Exception e) {
+	      	   e.printStackTrace();
+	        return false; 
+	    }
+	}
 
 
-}
+
+public boolean delete(int teacherId) {
+		try {
+
+			Object[] args = {teacherId};
+			int data = Template.update("delete from teacher where TeacherId=?", args);
+			 
+			 if(data==1){
+				 return true;
+			 }	
+
+		} catch (Exception e2) {
+         System.out.println(e2);
+		}
+		return false;
+	}
+	}
+
+	
+

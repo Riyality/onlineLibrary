@@ -21,6 +21,14 @@ public class TeacherService {
 		return teacherDao.AllTeachers();
 	}
 
+	public boolean update(com.rt.entity.Teacher teacher) {
+		return teacherDao.update(teacher);
+	}
+
+	public boolean delete(int teacherId) {
+		return teacherDao.delete(teacherId);
+	}
+
 
 
 

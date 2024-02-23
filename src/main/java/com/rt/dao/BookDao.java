@@ -34,8 +34,34 @@ public class BookDao {
 		}
 		return false;
 	}
-	//---------------------------------view All------------------------------------
+	
+	
+	
+	
+	public boolean update(BookEntity entity) {
+	    try {
+	        Object[] args = {entity.getTitle(), entity.getAuthor(), entity.getLanguage(), entity.getISBN(),
+	        		entity.getPublisher(), entity.getPublisherCity(), entity.getPublicationDate(), entity.getBookId()};
+	        
+	        String sql = "update book SET `Title` = ?, `Author` = ?, `Language` = ?, `ISBN` = ?, `Publisher` = ?, "
+	        		+ "`PublisherCity` = ?, `PublicationDate` = ? WHERE BookId = ?";
+	        
+	        int a = template.update(sql, args);
 
+	        if (a == 1) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    } catch (Exception e2) {
+	        e2.printStackTrace();
+	        return false;
+	    }
+	}
+
+	
+	
+	
 	public List<BookEntity> AllBook() {
 	    List<BookEntity> list = null;
 
@@ -47,4 +73,25 @@ public class BookDao {
 
 	    return list;
 	}
+
+
+
+
+	public boolean deletedata(int bookId) {
+		try {
+
+			Object[] args = {bookId};
+			int data = template.update("delete from book where bookId=?", args);
+			 
+			 if(data==1){
+				 return true;
+			 }	
+
+		} catch (Exception e2) {
+         System.out.println(e2);
+		}
+		return false;
+	}
+
+	
 }
