@@ -15,8 +15,8 @@
 								<div class="page-sub-header">
 									<h3 class="page-title">Add Students</h3>
 									<ul class="breadcrumb">
-										<li class="breadcrumb-item"><a href="students.html">Student</a></li>
-										<li class="breadcrumb-item active">Add Students</li>
+										<li class="breadcrumb-item"><a href="list">Student</a></li>
+										<li class="active">/Add</li>
 									</ul>
 								</div>
 							</div>
@@ -30,27 +30,18 @@
 							<div class="card comman-shadow">
 								<div class="card-body">
 									<form action="add" method="post">
-										<div class="row">
-											<div class="col-12">
-												<h5 class="form-title student-info">Student Information <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
-											</div>
-											<div class="col-12 col-sm-4">  
-												<div class="form-group local-forms">
-													<label >Student Id <span class="login-danger">*</span></label>
-													<input class="form-control" name="StudentId" type="text" placeholder="Enter Student Id" >
-												</div>
-											</div>
+										<div class="row">						
 											
 											<div class="col-12 col-sm-4">  
 												<div class="form-group local-forms">
 													<label >First Name <span class="login-danger">*</span></label>
-													<input class="form-control" name="FirstName" type="text" placeholder="Enter First Name" >
+													<input class="form-control" name="FirstName" type="text"  >
 												</div>
 											</div>
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Last Name <span class="login-danger">*</span></label>
-													<input class="form-control" name="LastName" type="text" placeholder="Enter last Name" >
+													<input class="form-control" name="LastName" type="text"  >
 												</div>
 											</div>
 											
@@ -59,7 +50,7 @@
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >E-Mail <span class="login-danger">*</span></label>
-													<input class="form-control" name="Email" type="text" placeholder="Enter Email Address" >
+													<input class="form-control" name="Email" type="text"  >
 												</div>
 											</div>
 													
@@ -93,7 +84,7 @@
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Phone </label>
-													<input class="form-control" name="ContactNumber" type="text" placeholder="Enter Phone Number" >
+													<input class="form-control" name="ContactNumber" type="text" >
 												</div>
 											</div>
 											<!-- <div class="col-12 col-sm-4">

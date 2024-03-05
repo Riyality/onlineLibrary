@@ -24,7 +24,7 @@ import com.rt.service.LibraryService;
 @RequestMapping("/students")
 public class StudentController {
 	@Autowired
-	LibraryService libraryService;
+	private LibraryService libraryService;
 
 	@RequestMapping("/add-form")
 	public String studentAdd() {

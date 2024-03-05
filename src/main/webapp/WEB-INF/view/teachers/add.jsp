@@ -16,7 +16,7 @@
 								<h3 class="page-title">Add Teachers</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="teachers.html">Teachers</a></li>
-									<li class="breadcrumb-item active">Add Teachers</li>
+									<li class="active">/Add </li>
 								</ul>
 							</div>
 						</div>
@@ -30,20 +30,11 @@
 								<div class="card-body">
 									 <form action="add" method="POST">
 												<div class="row">
-											<div class="col-12">
-												<h5 class="form-title"><span>Teacher Registration Form</span></h5>
-													 
-												</div>
-											 <div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Teacher Id <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Teacher Id" name="TeacherId">
-												</div>
-											</div>    								
+														  								
 											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
-													<label >Firste Name <span class="login-danger">*</span></label>
+													<label >First Name <span class="login-danger">*</span></label>
 													<input type="text" class="form-control" placeholder="Enter Firste Name" name="FirstName">
 												</div>
 											</div>

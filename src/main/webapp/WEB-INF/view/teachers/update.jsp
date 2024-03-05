@@ -15,8 +15,8 @@
 							<div class="col">
 								<h3 class="page-title">Edit Teachers</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="teachers.html">Teachers</a></li>
-									<li class="breadcrumb-item active">Edit Teachers</li>
+									<li class="breadcrumb-item"><a href="#">Teachers</a></li>
+									<li class="active">/Edit</li>
 								</ul>
 							</div>
 						</div>
@@ -30,28 +30,24 @@
 								<div class="card-body">
 									<form action="updateTeacher" method="post">
 										<div class="row">
-											<div class="col-12">
-												<h5 class="form-title"><span>Teacher Registration Form</span></h5>
-													 
-												</div>
-											 <div class="col-12 col-sm-4">
+											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Teacher Id <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Teacher Id" name="TeacherId" value="${param.TeacherId }">
+													<input type="text" class="form-control"  name="TeacherId" value="${param.TeacherId }">
 												</div>
 											</div>    								
 											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label >Firste Name <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Firste Name" name="FirstName" value="${param.FirstName }">
+													<input type="text" class="form-control"  name="FirstName" value="${param.FirstName }">
 												</div>
 											</div>
 											
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Last Name <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Last Name" name="LastName" value="${param.LastName }">
+													<input type="text" class="form-control"  name="LastName" value="${param.LastName }">
 												</div>
 											</div>
 											
@@ -60,7 +56,7 @@
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Email ID <span class="login-danger">*</span></label>
-													<input type="email" class="form-control" placeholder="Enter Mail Id" name="Email" value="${param.Email }">
+													<input type="email" class="form-control"  name="Email" value="${param.Email }">
 												</div>
 											</div>
 											
@@ -68,7 +64,7 @@
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Contact Number <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" placeholder="Enter Contact Number" name="ContactNumber" value="${param.ContactNumber }">
+													<input type="text" class="form-control"  name="ContactNumber" value="${param.ContactNumber }">
 												</div>
 											</div>
 											

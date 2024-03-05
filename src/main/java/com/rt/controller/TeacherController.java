@@ -18,7 +18,7 @@ import com.rt.service.TeacherService;
 @RequestMapping("/teachers")
 public class TeacherController {
 	@Autowired
-	TeacherService teacherService;
+	 private TeacherService teacherService;
 	
 	@RequestMapping("/add-form")
 	public String addForm(){

@@ -15,8 +15,8 @@
 								<div class="page-sub-header">
 									<h3 class="page-title">Edit Students</h3>
 									<ul class="breadcrumb">
-										<li class="breadcrumb-item"><a href="list.jsp">Student</a></li>
-										<li class="breadcrumb-item active">Edit Students</li>
+										<li class="breadcrumb-item"><a href="#">Student</a></li>
+										<li class="active">Edit</li>
 									</ul>
 								</div>
 							</div>

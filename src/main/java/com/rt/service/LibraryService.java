@@ -38,6 +38,13 @@ public class LibraryService {
 
 	}
 
+	public int getnumberOfStudents() {
+		   return librarydao.getNumberOfStudents();
+
+	}
+
+	
+
 	
 
 

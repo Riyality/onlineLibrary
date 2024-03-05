@@ -14,8 +14,8 @@
 							<div class="col">
 								<h3 class="page-title">Edit Books</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="library.html">Library</a></li>
-									<li class="breadcrumb-item active">Edit Books</li>
+									<li class="breadcrumb-item"><a href="#">Books</a></li>
+									<li class="active">/Edit </li>
 								</ul>
 							</div>
 						</div>
@@ -29,10 +29,7 @@
 								<div class="card-body">
 									<form action="updateBook" method="post">
 										<div class="row">
-											<div class="col-12">
-												<h5 class="form-title"><span>Book Information</span></h5>
-											</div>
-											<div class="col-12 col-sm-4">
+												<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Book ID <span class="login-danger">*</span></label>
 													<input type="text" class="form-control"  name="BookId" value="${param.BookId }">

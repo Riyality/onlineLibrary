@@ -17,23 +17,23 @@ public class LibraryDao {
 	JdbcTemplate template;
 
 	public boolean addStudent(StudentEntity student) {
-		try {
-			Object args[] = { student.getStudentId(), student.getFirstName(), student.getLastName(), student.getEmail(),student.getClassName(),student.getDepartment(),
-					student.getContactNumber()};
-			int data = template.update(
-					"insert into student(`StudentId`,`FirstName`,`LastName`,`Email`,`className`,`department`,`ContactNumber`) values(?,?,?,?,?,?,?)",
-					args);
-			if (data == 1) {
-				return true;
-			} else {
-				return false;
-			}
+	    try {
+	        Object args[] = { student.getFirstName(), student.getLastName(), student.getEmail(),student.getClassName(),student.getDepartment(),
+	                student.getContactNumber()};
+	        int data = template.update(
+	                "insert into student(`FirstName`,`LastName`,`Email`,`className`,`department`,`ContactNumber`) values(?,?,?,?,?,?)",
+	                args);
+	        if (data == 1) {
+	            return true;
+	        } else {
+	            throw new RuntimeException("Failed to insert student record. No rows affected.");
+	        }
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
+	    } catch (Exception e) {
+	        throw new RuntimeException("Error while inserting student record", e);
+	    }
 	}
+
 
 	
 	public List<StudentEntity> AllStudents() {
@@ -105,6 +105,12 @@ public class LibraryDao {
          System.out.println(e);
 		}
 		return false;
+	}
+
+
+
+	public int getNumberOfStudents() {
+		return template.queryForObject("SELECT COUNT(*) FROM student", Integer.class);
 	}
 
 	

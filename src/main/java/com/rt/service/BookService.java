@@ -37,4 +37,9 @@ public class BookService {
 			return bookDao.deletedata(bookId);
 		}
 
+
+		  public int getNumberOfBooks() {
+		     return bookDao.getNumberOfBooks();
+		    }
+
 }
