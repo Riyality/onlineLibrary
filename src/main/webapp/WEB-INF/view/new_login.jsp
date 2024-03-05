@@ -40,11 +40,11 @@
             	<div class="container">
                 	<div class="loginbox">
                     	<div class="login-left">
-							<img class="img-fluid" src="resources/assets/img/login.png" alt="Logo">
+							<img class="img-fluid" src="resources/assets/image/img4.jpg"style=" border-radius: 10px 0 0 10px;" alt="Logo">
                         </div>
-                        <div class="login-right">
+                        <div class="login-right" >
 							<div class="login-right-wrap">
-								<h1>Welcome to Preskool</h1>
+								<h1>Welcome to <span style="color: #3636abf0;">Library</span></h1>
 								<p class="account-subtitle">Need an account?  <a href="register.html">Sign Up</a></p>
 								<h2>Sign in</h2>
 								<!-- Form -->
@@ -74,19 +74,6 @@
 								</form>
 								<!-- /Form -->
 								
-								<div class="login-or">
-									<span class="or-line"></span>
-									<span class="span-or">or</span>
-								</div>
-								  
-								<!-- Social Login -->
-								<div class="social-login">
-									<a href="#" ><i class="fab fa-google-plus-g"></i></a>
-									<a href="#" ><i class="fab fa-facebook-f"></i></a>
-									<a href="#" ><i class="fab fa-twitter"></i></a>
-									<a href="#" ><i class="fab fa-linkedin-in"></i></a>
-								</div>
-								<!-- /Social Login -->
 								
 							</div>
                         </div>

@@ -15,8 +15,8 @@ public class TeacherDao {
 //Register teacher operation
 	public boolean saveTeacher(Teacher teacher) {
 		try{
-			Object[] args={teacher.getTeacherId(), teacher.getFirstName(),teacher.getLastName(),teacher.getEmail(),teacher.getContactNumber(),teacher.getFaculty()};
-			int ADDteacher=Template.update("insert into teacher(`TeacherId`,`FirstName`,`LastName`,`Email`,`ContactNumber`,`faculty`)values(?,?,?,?,?,?)",
+			Object[] args={teacher.getFirstName(),teacher.getLastName(),teacher.getEmail(),teacher.getContactNumber(),teacher.getFaculty()};
+			int ADDteacher=Template.update("insert into teacher(`FirstName`,`LastName`,`Email`,`ContactNumber`,`faculty`)values(?,?,?,?,?)",
 					args);
 		
 				if(ADDteacher==1)
@@ -104,6 +104,10 @@ public boolean delete(int teacherId) {
 		}
 		return false;
 	}
+
+
+public int getnumberOfTeachers() {
+	return Template.queryForObject("SELECT COUNT(*) FROM teacher", Integer.class);}
 	}
 
 	

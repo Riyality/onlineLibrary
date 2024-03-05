@@ -17,8 +17,8 @@ public class BookDao {
 
 	public boolean addBook(BookEntity entity) {
 		try {
-			Object args[] = { entity.getBookId(),entity.getTitle(),entity.getAuthor(),entity.getLanguage(),entity.getISBN(),entity.getPublisher(),entity.getPublisherCity(),entity.getPublicationDate()};
-			int data = template.update("INSERT INTO book (`BookId`, `Title`, `Author`,`Language`, `ISBN`, `Publisher`, `PublisherCity`, `PublicationDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", args);
+			Object args[] = {entity.getTitle(),entity.getAuthor(),entity.getLanguage(),entity.getISBN(),entity.getPublisher(),entity.getPublisherCity(),entity.getPublicationDate()};
+			int data = template.update("INSERT INTO book (`Title`, `Author`,`Language`, `ISBN`, `Publisher`, `PublisherCity`, `PublicationDate`) VALUES (?, ?, ?, ?, ?, ?, ?)", args);
 
 		
 			if (data == 1) {
@@ -93,5 +93,11 @@ public class BookDao {
 		return false;
 	}
 
+
+
+
+	public int getNumberOfBooks() {
+        return template.queryForObject("SELECT COUNT(*) FROM book", Integer.class);
+    }
 	
 }

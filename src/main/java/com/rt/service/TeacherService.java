@@ -29,6 +29,10 @@ public class TeacherService {
 		return teacherDao.delete(teacherId);
 	}
 
+	public int getnumberOfTeachers() {
+		 return teacherDao.getnumberOfTeachers();
+	}
+
 
 
 

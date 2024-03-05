@@ -57,9 +57,7 @@
 
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="index.jsp" class="logo"> <img
-					src="<c:url value='/resources/assets/img/logo.png' />"
-					alt="Logo" />
+				<a href="index.jsp" class="logo"> <h2> Online <span style="color: #3636abf0;">Library</span></h2>
 				</a> <a href="index.html" class="logo logo-small"> <img
 					src="<c:url value='/resources/assets/img/logo-small.png'/>"
 					height="30" width="30" alt="Logo" />
@@ -73,17 +71,7 @@
 				</a>
 			</div>
 
-			<!-- Search Bar -->
-			<div class="top-nav-search">
-				<form>
-					<input type="text" class="form-control" placeholder="Search here">
-					<button class="btn" type="submit">
-						<i class="fas fa-search"></i>
-					</button>
-				</form>
-			</div>
-			<!-- /Search Bar -->
-
+	
 			<!-- Mobile Menu Toggle -->
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i>
 			</a>
@@ -92,11 +80,7 @@
 			<!-- Header Right Menu -->
 			<ul class="nav user-menu">
 				<li class="nav-item dropdown noti-dropdown language-drop me-2">
-					<a href="#" class="dropdown-toggle nav-link header-nav-list"
-					data-bs-toggle="dropdown"> <img
-						src="<c:url value='/resources/assets/img/icons/header-icon-01.svg' />"
-						alt="" />
-				</a>
+					
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="javascript:;"><i
 							class="flag flag-lr me-2"></i>English</a> <a class="dropdown-item"
@@ -107,13 +91,7 @@
 				</li>
 
 				<!-- Notifications -->
-				<li class="nav-item dropdown noti-dropdown me-2"><a href="#"
-					class="dropdown-toggle nav-link header-nav-list"
-					data-bs-toggle="dropdown"> <img
-						src="<c:url value='/resources/assets/img/icons/header-icon-05.svg' />"
-						alt="" />
-
-				</a>
+				<li class="nav-item dropdown noti-dropdown me-2">
 					<div class="dropdown-menu notifications">
 						<div class="topnav-dropdown-header">
 							<span class="notification-title">Notifications</span> <a
@@ -240,7 +218,7 @@
 								width="31" alt="Ryan Taylor">
 
 							<div class="user-text">
-								<h6>Ryan Taylor</h6>
+								<h6>Admin</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
 						</div>
@@ -285,27 +263,37 @@
 							<ul class="dropdown-menu">
 								<li><a href="students/list">List</a></li>
 								<li><a href="students/add-form">Add</a></li>
-								<li><a href="students/edit-form"> Edit</a></li>
+								
 
 							</ul></li>
 
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
-							href="#"><i class="fas fa-graduation-cap"></i> <span>
+							href="#"><i class="fas fa-chalkboard-teacher"></i> <span>
 									Teachers</span> <span class="menu-arrow"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="teachers/list">List</a></li>
 								<li><a href="teachers/add-form">Add</a></li>
-								<li><a href="teachers/edit-form">Edit</a></li>
+								
 							</ul></li>
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
-							href="#"><i class="fas fa-graduation-cap"></i> <span>Books</span>
+							href="#"><i class="fas fa-book"></i> <span>Books</span>
 								<span class="menu-arrow"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="books/add-form">Add Book</a></li>
 								<li><a href="books/list"> View Books</a></li>
+                                <li><a href="books/History">Book History</a></li>
+							</ul></li>
+								<li><a href="books/addBorrowForm"><i class="fas fa-book"></i> <span>Borrow Book</span></a>
+						</li>
+							
+						<!-- <li class="submenu dropdown"><a data-bs-toggle="dropdown"
+							href="#"><i class="fas fa-graduation-cap"></i> <span>BorrowBook</span>
+							 <span class="menu-arrow"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="books/addBorrowForm">Add</a></li>
 
 							</ul></li>
-						<li class="menu-title"><span>Management</span></li>
+ -->						<li class="menu-title"><span>Management</span></li>
 
 
 						<li><a href="library.jsp"><i class="fas fa-book"></i> <span>Library</span></a>

@@ -14,8 +14,8 @@
 							<div class="col">
 								<h3 class="page-title">Add Books</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="library.html">Library</a></li>
-									<li class="breadcrumb-item active">Add Books</li>
+									<li class="breadcrumb-item"><a href="#">Books</a></li>
+									<li class=" active">/ Add</li>
 								</ul>
 							</div>
 						</div>
@@ -28,16 +28,7 @@
 							<div class="card">
 								<div class="card-body">
 									<form action="add" method="post">
-										<div class="row">
-											<div class="col-12">
-												<h5 class="form-title"><span>Book Information</span></h5>
-											</div>
-											<div class="col-12 col-sm-4">
-												<div class="form-group local-forms">
-													<label>Book ID <span class="login-danger">*</span></label>
-													<input type="text" class="form-control" name="BookId">
-												</div>
-											</div>
+										<div class="row">									
 											<div class="col-12 col-sm-4">
 												<div class="form-group local-forms">
 													<label>Title <span class="login-danger">*</span></label>
