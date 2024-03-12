@@ -279,21 +279,17 @@
 							href="#"><i class="fas fa-book"></i> <span>Books</span>
 								<span class="menu-arrow"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="books/add-form">Add Book</a></li>
-								<li><a href="books/list"> View Books</a></li>
-                                <li><a href="books/History">Book History</a></li>
+								<li><a href="books/add-form">Add</a></li>
+								<li><a href="books/list">List</a></li>
+                                <li><a href="books/issuerecord">Issue Record</a></li>
 							</ul></li>
-								<li><a href="books/addBorrowForm"><i class="fas fa-book"></i> <span>Borrow Book</span></a>
-						</li>
+						<!-- 		<li><a href="books/addBorrowForm"><i class="fas fa-book"></i> <span>Borrow Book</span></a>
+						      </li> -->
+						      		<li><a href="books/issueBook-form"><i class="fas fa-book"></i> <span>Issue Book</span></a>
+						      </li>
 							
-						<!-- <li class="submenu dropdown"><a data-bs-toggle="dropdown"
-							href="#"><i class="fas fa-graduation-cap"></i> <span>BorrowBook</span>
-							 <span class="menu-arrow"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="books/addBorrowForm">Add</a></li>
-
-							</ul></li>
- -->						<li class="menu-title"><span>Management</span></li>
+				
+    					<li class="menu-title"><span>Management</span></li>
 
 
 						<li><a href="library.jsp"><i class="fas fa-book"></i> <span>Library</span></a>

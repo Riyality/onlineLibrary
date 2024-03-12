@@ -3,7 +3,7 @@ package com.rt.entity;
 import javax.persistence.Entity;
 
 @Entity
-public class Teacher {
+public class TeacherEntity {
 	private int TeacherId;
 	private String FirstName;
 	private String LastName;
@@ -12,11 +12,11 @@ public class Teacher {
 	private String Faculty;
 	
 	
-	public Teacher(){}
+	public TeacherEntity(){}
 
 
 
-public Teacher(int teacherId, String firstName, String lastName, String email, String contactNumber,String faculty) {
+public TeacherEntity(int teacherId, String firstName, String lastName, String email, String contactNumber,String faculty) {
 	super();
 	this.TeacherId = teacherId;
 	this.FirstName = firstName;

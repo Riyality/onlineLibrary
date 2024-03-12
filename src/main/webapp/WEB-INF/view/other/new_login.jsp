@@ -48,15 +48,15 @@
 								<p class="account-subtitle">Need an account?  <a href="register.html">Sign Up</a></p>
 								<h2>Sign in</h2>
 								<!-- Form -->
-								<form action="login">
+								<form action="login" method="post">
 									<div class="form-group">
 										<label >Username <span class="login-danger">*</span></label>
-										<input class="form-control" type="text" >
+										<input class="form-control" type="text" id="username" name="username" >
 										<span class="profile-views"><i class="fas fa-user-circle"></i></span>
 									</div>
 									<div class="form-group">
 										<label >Password <span class="login-danger">*</span></label>
-										<input class="form-control pass-input" type="text" >
+										<input class="form-control pass-input" type="password" name="password" >
 										<span class="profile-views feather-eye toggle-password"></span>
 									</div>
 									<div class="forgotpass">

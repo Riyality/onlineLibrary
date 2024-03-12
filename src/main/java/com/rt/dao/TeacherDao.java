@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.rt.entity.Teacher;
+import com.rt.entity.TeacherEntity;
 import com.rt.mapper.TeacherRowMapper;
 @Repository
 public class TeacherDao {
 	@Autowired
 	JdbcTemplate Template;
 //Register teacher operation
-	public boolean saveTeacher(Teacher teacher) {
+	public boolean saveTeacher(TeacherEntity teacher) {
 		try{
 			Object[] args={teacher.getFirstName(),teacher.getLastName(),teacher.getEmail(),teacher.getContactNumber(),teacher.getFaculty()};
 			int ADDteacher=Template.update("insert into teacher(`FirstName`,`LastName`,`Email`,`ContactNumber`,`faculty`)values(?,?,?,?,?)",
@@ -33,8 +33,8 @@ public class TeacherDao {
 	
 	
 	//SELECT ALL TEACHER OPERATION
-	public List<Teacher> AllTeachers() {
-		List<Teacher> list = null;
+	public List<TeacherEntity> AllTeachers() {
+		List<TeacherEntity> list = null;
 		try {
 			Object[] args = {};
 			list = Template.query("select * from teacher", args,new TeacherRowMapper());
@@ -70,7 +70,7 @@ public boolean update(Teacher teacher) {
 
 */
 
-	public boolean update(Teacher teacher) {
+	public boolean update(TeacherEntity teacher) {
 	    try {
 	        Object[] args = {teacher.getFirstName(), teacher.getLastName(),
 	                teacher.getEmail(), teacher.getContactNumber(), teacher.getFaculty(), teacher.getTeacherId()};

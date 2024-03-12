@@ -10,15 +10,17 @@ import com.rt.entity.BookEntity;
 import com.rt.mapper.BookRowMapper;
 
 @Repository
-public class BookDao {
+public class BookDao  {
 
 	@Autowired
 	JdbcTemplate template;
+	
+	
 
 	public boolean addBook(BookEntity entity) {
 		try {
-			Object args[] = {entity.getTitle(),entity.getAuthor(),entity.getLanguage(),entity.getISBN(),entity.getPublisher(),entity.getPublisherCity(),entity.getPublicationDate()};
-			int data = template.update("INSERT INTO book (`Title`, `Author`,`Language`, `ISBN`, `Publisher`, `PublisherCity`, `PublicationDate`) VALUES (?, ?, ?, ?, ?, ?, ?)", args);
+			Object args[] = {entity.getTitle(),entity.getAuthor(),entity.getLanguage(),entity.getISBN(),entity.getPublisher(),entity.getPublisherCity(),entity.getPublicationDate(),entity.getStatus(),entity.getAvailableQuantity(),entity.getTotalQuantity()};
+			int data = template.update("INSERT INTO book (`Title`, `Author`,`Language`, `ISBN`, `Publisher`, `PublisherCity`, `PublicationDate`, `Status`,`AvailableQuantity`,`TotalQuantity`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)", args);
 
 		
 			if (data == 1) {
@@ -37,29 +39,23 @@ public class BookDao {
 	
 	
 	
-	
 	public boolean update(BookEntity entity) {
 	    try {
 	        Object[] args = {entity.getTitle(), entity.getAuthor(), entity.getLanguage(), entity.getISBN(),
-	        		entity.getPublisher(), entity.getPublisherCity(), entity.getPublicationDate(), entity.getBookId()};
+	            entity.getPublisher(), entity.getPublisherCity(), entity.getPublicationDate(),
+	            entity.getBookId()};
 	        
-	        String sql = "update book SET `Title` = ?, `Author` = ?, `Language` = ?, `ISBN` = ?, `Publisher` = ?, "
-	        		+ "`PublisherCity` = ?, `PublicationDate` = ? WHERE BookId = ?";
+	        String sql = "UPDATE book SET `Title` = ?, `Author` = ?, `Language` = ?, `ISBN` = ?, `Publisher` = ?, "
+	            + "`PublisherCity` = ?, `PublicationDate` = ? WHERE BookId = ?";
 	        
-	        int a = template.update(sql, args);
+	        int rowsUpdated = template.update(sql, args);
 
-	        if (a == 1) {
-	            return true;
-	        } else {
-	            return false;
-	        }
-	    } catch (Exception e2) {
-	        e2.printStackTrace();
-	        return false;
+	        return rowsUpdated == 1;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false; 
 	    }
-	}
-
-	
+	}	
 	
 	
 	public List<BookEntity> AllBook() {
@@ -94,10 +90,25 @@ public class BookDao {
 	}
 
 
+//need
+	 public int getTotalQuantity() {
+	        String sql = "SELECT SUM(TotalQuantity) FROM Book";
+	        return template.queryForObject(sql, Integer.class);
+	    }
+
+	    public int getAvailableQuantity() {
+	        String sql = "SELECT SUM(AvailableQuantity) FROM Book WHERE Status = 'Available'";
+	        return template.queryForObject(sql, Integer.class);
+	    }
 
 
-	public int getNumberOfBooks() {
-        return template.queryForObject("SELECT COUNT(*) FROM book", Integer.class);
-    }
-	
-}
+
+	    public int getTotalQuantityByBookId(int bookId) {
+		    String sql = "SELECT TotalQuantity FROM Book WHERE BookId = ?";
+		    return template.queryForObject(sql, Integer.class, bookId);
+		}
+
+
+
+	 
+	    }

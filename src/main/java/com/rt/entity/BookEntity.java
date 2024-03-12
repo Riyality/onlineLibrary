@@ -9,11 +9,15 @@ public class BookEntity {
 	private String Publisher;
 	private String PublisherCity;
 	private String PublicationDate;
-	
-	public BookEntity(){}
-	
+	private String Status;
+	private int AvailableQuantity;
+	private int TotalQuantity;
+
+	public BookEntity() {
+	}
+
 	public BookEntity(int bookId, String title, String author, String language, String iSBN, String publisher,
-			String publisherCity, String publicationDate) {
+			String publisherCity, String publicationDate, String status, int availableQuantity, int totalQuantity) {
 		super();
 		BookId = bookId;
 		Title = title;
@@ -23,6 +27,9 @@ public class BookEntity {
 		Publisher = publisher;
 		PublisherCity = publisherCity;
 		PublicationDate = publicationDate;
+		Status = status;
+		AvailableQuantity = availableQuantity;
+		TotalQuantity = totalQuantity;
 	}
 
 	public int getBookId() {
@@ -88,6 +95,32 @@ public class BookEntity {
 	public void setPublicationDate(String publicationDate) {
 		PublicationDate = publicationDate;
 	}
-	
-	
+
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		Status = status;
+	}
+
+	public int getAvailableQuantity() {
+		return AvailableQuantity;
+	}
+
+	public void setAvailableQuantity(int availableQuantity) {
+		AvailableQuantity = availableQuantity;
+	}
+
+	public int getTotalQuantity() {
+		return TotalQuantity;
+	}
+
+	public void setTotalQuantity(int totalQuantity) {
+		TotalQuantity = totalQuantity;
+	}
+
+	public int calculateAvailableQuantity(int totalQuantity, int numberOfIssuedBooks) {
+		return totalQuantity - numberOfIssuedBooks;
+	}
 }

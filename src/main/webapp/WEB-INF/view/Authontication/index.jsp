@@ -27,7 +27,7 @@
 
 					<!-- Overview Section -->
 					<div class="row">
-						<div class="col-xl-4 col-sm-6 col-12 d-flex">
+						<div class="col-xl-3 col-sm-6 col-12 d-flex">
 							<div class="card bg-comman w-100">
 								<div class="card-body">
 									<div class="db-widgets d-flex justify-content-between align-items-center">
@@ -44,7 +44,7 @@
 							</div>
 						</div>
 
-						<div class="col-xl-4 col-sm-6 col-12 d-flex">
+						<div class="col-xl-3 col-sm-6 col-12 d-flex">
 							<div class="card bg-comman w-100">
 								<div class="card-body">
 									<div class="db-widgets d-flex justify-content-between align-items-center">
@@ -59,8 +59,8 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="col-xl-4 col-sm-6 col-12 d-flex">
+                           
+						<div class="col-xl-3 col-sm-6 col-12 d-flex">
 							<div class="card bg-comman w-100">
 								<div class="card-body">
 									<div class="db-widgets d-flex justify-content-between align-items-center">
@@ -75,7 +75,23 @@
 								</div>
 							</div>
 						</div>
-
+							
+							<div class="col-xl-3 col-sm-6 col-12 d-flex">
+							<div class="card bg-comman w-100">
+								<div class="card-body">
+									<div class="db-widgets d-flex justify-content-between align-items-center">
+										<div class="db-info">
+											<h6>Avilable Books</h6>
+											 <h3>${availableBooks}</h3>
+										</div>
+										<div class="db-icon">
+											<img  src="resources/assets/img/icons/dash-icon-03.svg"  alt="Dashboard Icon">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							
 					</div>
 					<!-- /Overview Section -->				
 
@@ -208,7 +224,7 @@
 												<img  src="resources/assets/img/icons/award-icon-01.svg"  alt="Award">
 											</div>
 											<div class="award-list-outs">
-												<h4>1st place in "Chess‚Äù</h4>
+												<h4>1st place in "Chess‚</h4>
 												<h5>John Doe won 1st place in "Chess"</h5>
 											</div>
 											<div class="award-time-list">
@@ -264,4 +280,3 @@
 
 <include page="../modules/footer.jsp"></include>
    
-

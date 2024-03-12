@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rt.dao.TeacherDao;
-import com.rt.entity.Teacher;
+import com.rt.entity.TeacherEntity;
 
 @Service
 public class TeacherService {
 @Autowired
 	TeacherDao	teacherDao;
-	public boolean add(Teacher teacher) {
+	public boolean add(TeacherEntity teacher) {
 		
 		return teacherDao.saveTeacher(teacher);
 	}
 	
-	public List<Teacher> all() {
+	public List<TeacherEntity> all() {
 		return teacherDao.AllTeachers();
 	}
 
-	public boolean update(com.rt.entity.Teacher teacher) {
+	public boolean update(com.rt.entity.TeacherEntity teacher) {
 		return teacherDao.update(teacher);
 	}
 

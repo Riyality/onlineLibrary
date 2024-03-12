@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.rt.entity.Teacher;
+import com.rt.entity.TeacherEntity;
 import com.rt.service.TeacherService;
 
 @Controller
@@ -25,7 +25,7 @@ public class TeacherController {
 		return "teachers/add";
 	}
 	@PostMapping("/add")
-		public String Teacher(@ModelAttribute Teacher teacher, Model model ){
+		public String Teacher(@ModelAttribute TeacherEntity teacher, Model model ){
 			boolean  isAdded =teacherService.add(teacher);
 			
 			if(isAdded){
@@ -44,7 +44,7 @@ public class TeacherController {
 	}
   		
   		 @PostMapping("/updateTeacher")
- 	  	public String update(@ModelAttribute  Teacher teacher, Model model){
+ 	  	public String update(@ModelAttribute  TeacherEntity teacher, Model model){
  	  		
  	  		boolean isAdded = teacherService.update(teacher);
  	  		
@@ -79,7 +79,7 @@ public class TeacherController {
   		 
 	@GetMapping("/list")
     public String teacherList(Model model) {
-        List<Teacher> teacherList = teacherService.all();
+        List<TeacherEntity> teacherList = teacherService.all();
         model.addAttribute("teacherList", teacherList);
         return "teachers/list"; // Assuming "students" is the view name
     }
