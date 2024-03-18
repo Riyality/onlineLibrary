@@ -33,6 +33,10 @@ public class TeacherService {
 		 return teacherDao.getnumberOfTeachers();
 	}
 
+	public TeacherEntity getTeacherById(int teacherId) {
+		return teacherDao.getTeacherById(teacherId);
+	}
+
 
 
 

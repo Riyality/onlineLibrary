@@ -14,28 +14,6 @@
 			<div class="row align-items-center">
 				<div class="col">
 					<h3 class="page-title">Teachers</h3>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Teachers</a></li>
-						<li class="active">/All</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- /Page Header -->
-		<div class="row justify-content-end mb-3">
-			<div class="col-lg-3 col-md-4">
-				<!-- Empty column for spacing, adjust width as needed -->
-			</div>
-			<div class="col-lg-3 col-md-4">
-				<div class="form-group mb-0">
-					<input type="text" class="form-control" id="contactNumberInput"
-						placeholder="Search by ContactNo">
-				</div>
-			</div>
-			<div class="col-lg-2 col-md-4">
-				<div class="form-group mb-0">
-					<button type="button" class="btn btn-primary w-100"
-						onclick="searchContactNo()">Search</button>
 				</div>
 			</div>
 		</div>
@@ -48,13 +26,21 @@
 				<div class="card card-table">
 					<div class="card-body">
 
-						<!-- Page Header -->
 						<div class="page-header">
 							<div class="row align-items-center">
-								<div class="col-auto text-end float-end ms-auto download-grp">
-
+								<div
+									class="col-auto text-end float-end ms-auto download-grp d-flex">
+									<div class="form-group mb-0 me-2">
+										<input type="text" class="form-control"
+											id="contactNumberInput" style="width: 220px;"
+											placeholder="Search by Contact Number">
+									</div>
+									<button type="button" class="btn btn-primary"
+										onclick="searchContactNo()" style="min-width: 200px;">Search</button>
+								</div>
+								<div class="col-auto">
 									<a href="#" class="btn btn-outline-primary me-2 d-none"><i
-										class="fas fa-download"></i> Download</a> <a href="add-form"
+										class="fas fa-download"></i> ADD</a> <a href="add-form"
 										class="btn btn-primary"><i class="fas fa-plus"></i></a>
 								</div>
 							</div>
@@ -65,7 +51,7 @@
 								class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
 								<thead class="student-thread">
 									<tr>
-									
+
 										<th>TeacherId</th>
 										<th>TeacherName</th>
 										<th>Email</th>
@@ -80,10 +66,11 @@
 									<c:if test="${not empty teacherList}">
 										<c:forEach var="teacher" items="${teacherList}">
 											<tr>
-											
+
 												<!-- Display teacher details -->
 												<td>${teacher.teacherId}</td>
-												<td>${teacher.firstName}${teacher.lastName}</td>
+												<td><a href="teacher-details/${teacher.teacherId}">${teacher.firstName}
+														${teacher.lastName}</a></td>
 												<td>${teacher.email}</td>
 												<td>${teacher.contactNumber}</td>
 												<td>${teacher.faculty}</td>
@@ -125,8 +112,8 @@
     }
 </script>
 
-    <!-- JavaScript code -->
-   <script>
+						<!-- JavaScript code -->
+						<script>
     function searchContactNo() {
         let filter = document.getElementById('contactNumberInput').value.trim();
         let tableRows = document.querySelectorAll('.datatable tbody tr');
@@ -146,17 +133,18 @@
     }
 </script>
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
+<script src="/plugins/datatables/datatables.min.js"></script>
 
-						<script src="/plugins/datatables/datatables.min.js"></script>
-
-						<include page="../modules/footer.jsp"></include>
-
+<jsp:include page="../modules/footer.jsp"></jsp:include>
 
 
 
-						<!-- Oracle Java Technologies | Oracle
-http://java.sun.com
- -->

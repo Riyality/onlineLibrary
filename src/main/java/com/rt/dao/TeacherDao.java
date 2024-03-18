@@ -108,6 +108,21 @@ public boolean delete(int teacherId) {
 
 public int getnumberOfTeachers() {
 	return Template.queryForObject("SELECT COUNT(*) FROM teacher", Integer.class);}
+
+
+public TeacherEntity getTeacherById(int teacherId) {
+    TeacherEntity teacherData = null;
+    try {
+        Object[] args = { teacherId };
+        teacherData = Template.queryForObject("SELECT * FROM teacher WHERE TeacherId=?", args, new TeacherRowMapper());
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    System.out.println(teacherData);
+    return teacherData;
+}
+
+
 	}
 
 	
