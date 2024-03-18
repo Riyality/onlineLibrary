@@ -32,11 +32,20 @@ public class issueBookService{
 	}
 
 
-//need
+
 		public  int getTotalIssuedBooks() {
 			return issueBookDao.getTotalIssuedBooks();
 		}
-	
 
+		public List<IssueBookEntity> getByUserId(int userId,String userType) {
+			 return issueBookDao.getByUserId(userId,userType);		}
 
-	}
+		
+		
+		
+		public void updateStatus(int issueId, String status) {
+			 issueBookDao.updateIssueBookStatus(issueId, status);
+			
+		}
+		
+			}

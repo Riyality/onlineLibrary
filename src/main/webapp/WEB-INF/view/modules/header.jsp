@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <html lang="en">
-
+<style>
+.Usericon{}
+</style>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -45,6 +48,21 @@
 <!-- Main CSS -->
 <link rel="stylesheet"
 	href="<c:url value="/resources/assets/css/style.css"/>">
+<style type="text/css">
+.down {
+	width: 180px;
+	height: 42px;
+}
+</style>
+
+<script>
+    function disableBackButton() {
+        // Disable back button
+        window.history.forward();
+        window.onunload = function() { null };
+        window.onbeforeunload = function() { null };
+    }
+</script>
 
 </head>
 <body>
@@ -57,7 +75,10 @@
 
 			<!-- Logo -->
 			<div class="header-left">
-				<a href="index.jsp" class="logo"> <h2> Online <span style="color: #3636abf0;">Library</span></h2>
+				<a href="index.jsp" class="logo">
+					<h2>
+						Online <span style="color: #3636abf0;">Library</span>
+					</h2>
 				</a> <a href="index.html" class="logo logo-small"> <img
 					src="<c:url value='/resources/assets/img/logo-small.png'/>"
 					height="30" width="30" alt="Logo" />
@@ -70,117 +91,9 @@
 					class="fas fa-bars"></i>
 				</a>
 			</div>
-
-	
-			<!-- Mobile Menu Toggle -->
-			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i>
-			</a>
-			<!-- /Mobile Menu Toggle -->
-
 			<!-- Header Right Menu -->
 			<ul class="nav user-menu">
-				<li class="nav-item dropdown noti-dropdown language-drop me-2">
-					
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="javascript:;"><i
-							class="flag flag-lr me-2"></i>English</a> <a class="dropdown-item"
-							href="javascript:;"><i class="flag flag-bl me-2"></i>Francais</a>
-						<a class="dropdown-item" href="javascript:;"><i
-							class="flag flag-cn me-2"></i>Turkce</a>
-					</div>
-				</li>
 
-				<!-- Notifications -->
-				<li class="nav-item dropdown noti-dropdown me-2">
-					<div class="dropdown-menu notifications">
-						<div class="topnav-dropdown-header">
-							<span class="notification-title">Notifications</span> <a
-								href="javascript:void(0)" class="clear-noti"> Clear All </a>
-						</div>
-						<div class="noti-content">
-							<ul class="notification-list">
-								<li class="notification-message"><a href="#">
-										<div class="media d-flex">
-											<span class="avatar avatar-sm flex-shrink-0"> <img
-												class="avatar-img rounded-circle" alt="User Image"
-												src="<c:url value='/resources/assets/img/profiles/avatar-02.jpg' />" />
-
-											</span>
-											<div class="media-body flex-grow-1">
-												<p class="noti-details">
-													<span class="noti-title">Carlson Tech</span> has approved <span
-														class="noti-title">your estimate</span>
-												</p>
-												<p class="noti-time">
-													<span class="notification-time">4 mins ago</span>
-												</p>
-											</div>
-										</div>
-								</a>
-								</li>
-								<li class="notification-message"><a href="#">
-										<div class="media d-flex">
-											<span class="avatar avatar-sm flex-shrink-0"> <img
-												class="avatar-img rounded-circle" alt="User Image"
-												src="<c:url value='/resources/assets/img/profiles/avatar-11.jpg' />" />
-
-											</span>
-											<div class="media-body flex-grow-1">
-												<p class="noti-details">
-													<span class="noti-title">International Software Inc</span>
-													has sent you a invoice in the amount of <span
-														class="noti-title">$218</span>
-												</p>
-												<p class="noti-time">
-													<span class="notification-time">6 mins ago</span>
-												</p>
-											</div>
-										</div>
-								</a></li>
-								<li class="notification-message"><a href="#">
-										<div class="media d-flex">
-											<span class="avatar avatar-sm flex-shrink-0"> <img
-												class="avatar-img rounded-circle" alt="User Image"
-												src="<c:url value='/resources/assets/img/profiles/avatar-17.jpg' />" />
-
-											</span>
-											<div class="media-body flex-grow-1">
-												<p class="noti-details">
-													<span class="noti-title">John Hendry</span> sent a
-													cancellation request <span class="noti-title">Apple
-														iPhone XR</span>
-												</p>
-												<p class="noti-time">
-													<span class="notification-time">8 mins ago</span>
-												</p>
-											</div>
-										</div>
-								</a></li>
-								<li class="notification-message"><a href="#">
-										<div class="media d-flex">
-											<span class="avatar avatar-sm flex-shrink-0"> <img
-												class="avatar-img rounded-circle" alt="User Image"
-												src="<c:url value='/resources/assets/img/profiles/avatar-13.jpg' />" />
-
-											</span>
-											<div class="media-body flex-grow-1">
-												<p class="noti-details">
-													<span class="noti-title">Mercury Software Inc</span> added
-													a new product <span class="noti-title">Apple MacBook
-														Pro</span>
-												</p>
-												<p class="noti-time">
-													<span class="notification-time">12 mins ago</span>
-												</p>
-											</div>
-										</div>
-								</a></li>
-							</ul>
-						</div>
-						<div class="topnav-dropdown-footer">
-							<a href="#">View all Notifications</a>
-						</div>
-					</div></li>
 				<li class="nav-item zoom-screen me-2"><a href="#"
 					class="nav-link header-nav-list win-maximize"
 					onclick="maximizeWindow()"> <img
@@ -189,36 +102,13 @@
 
 				</a></li>
 
-
-
-				<script>
-					function maximizeWindow() {
-						// You can add the logic here to maximize the window
-						// For example, in pure JavaScript:
-						if (document.body.requestFullscreen) {
-							document.body.requestFullscreen();
-						} else if (document.body.mozRequestFullScreen) {
-							document.body.mozRequestFullScreen();
-						} else if (document.body.webkitRequestFullscreen) {
-							document.body.webkitRequestFullscreen();
-						} else if (document.body.msRequestFullscreen) {
-							document.body.msRequestFullscreen();
-						}
-					}
-				</script>
-
-
-
 				<!-- User Menu -->
 				<li class="nav-item dropdown has-arrow new-user-menus"><a
 					href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
 						<div class="user-img">
-							<img class="rounded-circle"
-								src="<c:url value='/resources/assets/img/profiles/avatar-01.jpg' />"
-								width="31" alt="Ryan Taylor">
-
+							<img src="resources/assets/image/user1.jpg" >
 							<div class="user-text">
-								<h6>Admin</h6>
+								<h6>${sessionScope.loggedInUsername}</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
 						</div>
@@ -226,19 +116,15 @@
 					<div class="dropdown-menu">
 						<div class="user-header">
 							<div class="avatar avatar-sm">
-								<img
-									src="<c:url value='/resources/assets/img/profiles/avatar-01.jpg' />"
-									alt="User Image" class="avatar-img rounded-circle" />
-
+								<img src="resources/assets/image/user1.jpg" >
 							</div>
 							<div class="user-text">
-								<h6>Ryan Taylor</h6>
+								<h6>${sessionScope.loggedInUsername}</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
-						</div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.jsp">My Profile</a> <a
-							class="dropdown-item" href="inbox.jsp">Inbox</a> <a
-							class="dropdown-item" href="/">Logout</a>
+						</div>
+						<a class="dropdown-item" href="<c:url value='/logout'/>"
+							onclick="disableBackButton()">Logout</a>
 					</div></li>
 				<!-- /User Menu -->
 
@@ -258,56 +144,32 @@
 								class="feather-grid"></i> <span> Dashboard</span> </span></a></li>
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
 							href="#"> <i class="fas fa-graduation-cap"></i> <span>
-									Students</span> <span class="menu-arrow"></span>
+									Students</span>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="students/list">List</a></li>
-								<li><a href="students/add-form">Add</a></li>
-								
-
+								<li><a class="down" href="<c:url value='/students/list'/>">List</a></li>
+								<li><a class="down"
+									href="<c:url value='/students/add-form'/>">Add</a></li>
 							</ul></li>
 
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
 							href="#"><i class="fas fa-chalkboard-teacher"></i> <span>
-									Teachers</span> <span class="menu-arrow"></span></a>
+									Teachers</span></a>
 							<ul class="dropdown-menu">
-								<li><a href="teachers/list">List</a></li>
-								<li><a href="teachers/add-form">Add</a></li>
-								
+								<li><a class="down" href="<c:url value='/teachers/list'/>">List</a></li>
+								<li><a class="down"
+									href="<c:url value='/teachers/add-form'/>">Add</a></li>
 							</ul></li>
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
-							href="#"><i class="fas fa-book"></i> <span>Books</span>
-								<span class="menu-arrow"></span></a>
+							href="#"><i class="fas fa-book"></i> <span>Books</span></a>
 							<ul class="dropdown-menu">
-								<li><a href="books/add-form">Add</a></li>
-								<li><a href="books/list">List</a></li>
-                                <li><a href="books/issuerecord">Issue Record</a></li>
+								<li><a class="down" href="<c:url value='/books/add-form'/>">Add</a></li>
+								<li><a class="down" href="<c:url value='/books/list'/>">List</a></li>
+								<li><a class="down"
+									href="<c:url value='/books/issuerecord'/>">Issue Record</a></li>
 							</ul></li>
-						<!-- 		<li><a href="books/addBorrowForm"><i class="fas fa-book"></i> <span>Borrow Book</span></a>
-						      </li> -->
-						      		<li><a href="books/issueBook-form"><i class="fas fa-book"></i> <span>Issue Book</span></a>
-						      </li>
-							
-				
-    					<li class="menu-title"><span>Management</span></li>
-
-
-						<li><a href="library.jsp"><i class="fas fa-book"></i> <span>Library</span></a>
-						</li>
-
-						<li><a href="settings.jsp"><i class="fas fa-cog"></i> <span>Settings</span></a>
-						</li>
-						<li class="menu-title"><span>Pages</span></li>
-						<li class="submenu"><a href="#" data-bs-toggle="dropdown">
-								<i class="fas fa-shield-alt"></i> <span> Authentication </span>
-								<span class="menu-arrow"></span>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="/">Login</a></li>
-								<li><a href="register.jsp">Register</a></li>
-								<li><a href="forgot-password.jsp">Forgot Password</a></li>
-								<li><a href="error-404.jsp">Error Page</a></li>
-							</ul></li>
+						<li><a href="<c:url value='/books/issueBook-form'/>"><i
+								class="fas fa-book"></i> Issue Book</a></li>
 
 
 					</ul>
@@ -315,3 +177,20 @@
 			</div>
 		</div>
 		<!-- /Sidebar -->
+
+
+		<script>
+			function maximizeWindow() {
+				// You can add the logic here to maximize the window
+				// For example, in pure JavaScript:
+				if (document.body.requestFullscreen) {
+					document.body.requestFullscreen();
+				} else if (document.body.mozRequestFullScreen) {
+					document.body.mozRequestFullScreen();
+				} else if (document.body.webkitRequestFullscreen) {
+					document.body.webkitRequestFullscreen();
+				} else if (document.body.msRequestFullscreen) {
+					document.body.msRequestFullscreen();
+				}
+			}
+		</script>

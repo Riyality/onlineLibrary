@@ -15,11 +15,10 @@ import com.rt.entity.BookEntity;
 public class BookService {
 	@Autowired
 	BookDao bookDao;
+	
 	@Autowired
 	IssueBookDao issuedBookDao;
-	@Autowired
-	private issueBookService issueBookService;
-
+	
 	public boolean addBook(BookEntity entity) {
 
 		return bookDao.addBook(entity);
@@ -27,7 +26,7 @@ public class BookService {
 
 	public List<BookEntity> all() {
 		List<BookEntity> books = bookDao.AllBook();
-				return books;
+		return books;
 	}
 
 	public boolean update(BookEntity entity) {
@@ -41,7 +40,7 @@ public class BookService {
 
 	public Map<String, Integer> calculateQuantities() {
 		int totalQuantity = bookDao.getTotalQuantity();
-		int availableQuantity = calculateAvailableQuantity();
+		int availableQuantity =bookDao.getAvailableQuantity();
 
 		Map<String, Integer> quantities = new HashMap<>();
 		quantities.put("TotalQuantity", totalQuantity);
@@ -49,34 +48,27 @@ public class BookService {
 
 		return quantities;
 	}
-
+/*
 	private int calculateAvailableQuantity() {
 		int totalIssuedBooks = issueBookService.getTotalIssuedBooks();
 		int totalQuantity = bookDao.getTotalQuantity();
 		return totalQuantity - totalIssuedBooks;
 	}
 
+*/	/*
+	 * public boolean isBookAvailable(int bookId) { int totalQuantity =
+	 * bookDao.getTotalQuantityByBookId(bookId); int issuedQuantity =
+	 * issuedBookDao.getIssuedQuantityByBookId(bookId); return issuedQuantity <
+	 * totalQuantity; }
+	 */
+	public void increaseAvailableQuantity(int bookId, String status) {
+		bookDao.increaseAvailableQuantity(bookId, status);
 
-	
-
-
-
-		public boolean isBookAvailable(int bookId) {
-			 int totalQuantity = bookDao.getTotalQuantityByBookId(bookId);
-		        int issuedQuantity = issuedBookDao.getIssuedQuantityByBookId(bookId);
-		        return issuedQuantity < totalQuantity;
-		    }
-
-		}
-	
-
-
-	/*public boolean isBookAvailable(int bookId) {
-	    BookEntity book = bookDao.getBookById(bookId);
-	    return book != null && 
-	           book.getStatus() != null && 
-	           book.getStatus().equalsIgnoreCase("Available") && 
-	           book.getAvailableQuantity() > 0;
 	}
 
-*/
+	public boolean isBookAvailable(int bookId) {
+		int availableQuantity = bookDao.getAvailableQuantityByBookId(bookId);
+		return availableQuantity > 0;
+	}
+
+}

@@ -159,7 +159,4 @@
 <!-- Datatables JS -->
 <script
 	src="<c:url value="/resources/assets/plugins/datatables/datatables.min.js"/>"></script>
-
-
-
-<include page="../modules/footer.jsp"></include>
+<jsp:include page="../modules/footer.jsp"></jsp:include>
