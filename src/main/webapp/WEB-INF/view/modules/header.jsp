@@ -106,7 +106,7 @@
 				<li class="nav-item dropdown has-arrow new-user-menus"><a
 					href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
 						<div class="user-img">
-							<img src="resources/assets/image/user1.jpg" >
+							<img src="<c:url value='/resources/assets/image/user1.jpg' />">
 							<div class="user-text">
 								<h6>${sessionScope.loggedInUsername}</h6>
 								<p class="text-muted mb-0">Administrator</p>
@@ -116,7 +116,7 @@
 					<div class="dropdown-menu">
 						<div class="user-header">
 							<div class="avatar avatar-sm">
-								<img src="resources/assets/image/user1.jpg" >
+								<img  src="<c:url value='/resources/assets/image/user1.jpg'/>">
 							</div>
 							<div class="user-text">
 								<h6>${sessionScope.loggedInUsername}</h6>
@@ -140,7 +140,7 @@
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
 						<li class="menu-title"><span>Main Menu</span></li>
-						<li class="submenu active"><a href="login"><i
+						<li class="submenu active"><a href="<c:url value='/login'/>" class="disabled" onclick="return false;"><i
 								class="feather-grid"></i> <span> Dashboard</span> </span></a></li>
 						<li class="submenu dropdown"><a data-bs-toggle="dropdown"
 							href="#"> <i class="fas fa-graduation-cap"></i> <span>
