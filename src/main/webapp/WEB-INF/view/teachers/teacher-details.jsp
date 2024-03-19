@@ -13,10 +13,6 @@
 				<div class="col-sm-12">
 					<div class="page-sub-header">
 						<h3 class="page-title">Teachers Details</h3>
-						<ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="teachers.jsp">Teachers</a></li>
-							<li class="breadcrumb-item active">Teachers Details</li>
-						</ul>
 					</div>
 				</div>
 			</div>
